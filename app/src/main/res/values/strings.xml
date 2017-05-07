@@ -11,4 +11,11 @@
     <string name="ktp">KTP : %s</string>
     <string name="ttl">TTL : %s</string>
     <string name="kamar">Kamar : %s</string>
+
+    <string-array name="kamars">
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>104</item>
+    </string-array>
 </resources>
