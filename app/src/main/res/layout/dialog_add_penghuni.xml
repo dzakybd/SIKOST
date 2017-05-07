@@ -1,45 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:paddingLeft="8dp"
     android:paddingRight="8dp">
 
-    <EditText
-        android:id="@+id/et_nama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nama"/>
-
-    <EditText
-        android:id="@+id/et_ktp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="KTP"/>
-
-    <EditText
-        android:id="@+id/et_ttl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="TTL"/>
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_kamar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Nama"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="KTP"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="TTL"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="Kamar"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="Nama" />
+
+        <EditText
+            android:id="@+id/et_ktp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="KTP" />
+
+        <EditText
+            android:id="@+id/et_ttl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="TTL" />
 
         <Spinner
             android:id="@+id/spn_kamar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/kamars"
-            />
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:entries="@array/kamars" />
 
     </LinearLayout>
 

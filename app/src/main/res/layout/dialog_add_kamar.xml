@@ -1,28 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:paddingLeft="8dp"
     android:paddingRight="8dp">
 
-    <EditText
-        android:id="@+id/et_nama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nama / Nomor Kamar"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <EditText
-        android:inputType="numberSigned"
-        android:id="@+id/et_kapasitas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Kapasitas"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Nama"
+            android:gravity="center_vertical"/>
 
-    <EditText
-        android:inputType="numberSigned"
-        android:id="@+id/et_biaya"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Biaya"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Kapasitas"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Biaya"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama / Nomor Kamar" />
+
+        <EditText
+            android:id="@+id/et_kapasitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kapasitas" />
+
+        <EditText
+            android:id="@+id/et_biaya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Biaya" />
+
+    </LinearLayout>
 
 </LinearLayout>
