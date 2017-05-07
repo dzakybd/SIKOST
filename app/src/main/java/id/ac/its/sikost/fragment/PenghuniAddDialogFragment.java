@@ -42,12 +42,12 @@ public class PenghuniAddDialogFragment extends DialogFragment {
         View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_add_penghuni, null);
         ButterKnife.bind(this, view);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.planets_array, R.layout.dialog_add_penghuni);
-        List<Kamar> kamars = KamarSingleton.getInstance().getKamars();
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.planets_array, R.layout.dialog_add_penghuni);
+//        List<Kamar> kamars = KamarSingleton.getInstance().getKamars();
 //        for (Kamar kamar : kamars) {
 //            adapter.add(kamar.getNama());
 //        }
-        spnKamar.setAdapter(adapter);
+//        spnKamar.setAdapter(adapter);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Tambah Kamar")
