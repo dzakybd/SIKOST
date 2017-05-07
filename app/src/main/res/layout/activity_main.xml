@@ -24,29 +24,105 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/datakamar"
-            android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
-        <ImageView
-            android:id="@+id/datapenghuni"
-            android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
-        <ImageView
-            android:id="@+id/pindahkamar"
-            android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
-        <ImageView
-            android:id="@+id/datapembayaran"
-            android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardkamar"
+            android:padding="10dp"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/datakamar"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:text="Data Kamar"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardpenghuni"
+            android:padding="10dp"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/datapenghuni"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:text="Data Penghuni"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardpindah"
+            android:padding="10dp"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/pindahkamar"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:text="Pindah Kamar"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardpembayaran"
+            android:padding="10dp"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/datapembayaran"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:text="Data Pembayaran"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </GridLayout>
+
+    <Button
+        android:layout_margin="20dp"
+        android:textColor="@android:color/white"
+        android:background="@color/primary"
+        android:gravity="center"
+        android:id="@+id/keluar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Keluar" />
 </LinearLayout>
