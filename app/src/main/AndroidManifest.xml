@@ -9,16 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.KamarListActivity" />
+        <activity android:name=".activity.DataKamarActivity" />
         <activity android:name=".activity.KamarInfoActivity" />
-        <activity android:name=".activity.PenghuniListActivity"></activity>
+        <activity android:name=".activity.DataPenghuniActivity" />
+        <activity android:name=".activity.Login" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.DataPembayaranActivity" />
+        <activity android:name=".activity.PindahKamarActivity"></activity>
     </application>
 
 </manifest>

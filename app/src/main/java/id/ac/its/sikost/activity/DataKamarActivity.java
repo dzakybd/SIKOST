@@ -17,7 +17,7 @@ import id.ac.its.sikost.fragment.KamarAddDialogFragment;
 import id.ac.its.sikost.model.Kamar;
 import id.ac.its.sikost.model.KamarSingleton;
 
-public class KamarListActivity extends AppCompatActivity {
+public class DataKamarActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_kamar)
     RecyclerView rvKamar;
