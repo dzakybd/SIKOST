@@ -16,11 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.KamarListActivity" />
+        <activity android:name=".activity.DataKamarActivity" />
         <activity android:name=".activity.KamarInfoActivity" />
-        <activity android:name=".activity.PenghuniListActivity"/>
-        <activity android:name=".activity.Login"/>
-        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.DataPenghuniActivity" />
+        <activity android:name=".activity.Login" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.DataPembayaranActivity" />
+        <activity android:name=".activity.PindahKamarActivity"></activity>
     </application>
 
 </manifest>

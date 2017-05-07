@@ -17,7 +17,7 @@ import id.ac.its.sikost.fragment.PenghuniAddDialogFragment;
 import id.ac.its.sikost.model.Penghuni;
 import id.ac.its.sikost.model.PenghuniSingleton;
 
-public class PenghuniListActivity extends AppCompatActivity {
+public class DataPenghuniActivity extends AppCompatActivity {
 
 
     @BindView(R.id.rv_penghuni)

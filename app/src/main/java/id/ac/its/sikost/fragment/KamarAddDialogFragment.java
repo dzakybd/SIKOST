@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.ac.its.sikost.activity.KamarListActivity;
+import id.ac.its.sikost.activity.DataKamarActivity;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.model.Kamar;
 import id.ac.its.sikost.model.KamarSingleton;
@@ -45,7 +45,7 @@ public class KamarAddDialogFragment extends DialogFragment {
                         int biaya = Integer.valueOf(etBiaya.getText().toString());
                         Kamar kamar = new Kamar(nama, kapasitas, 0, biaya, "bulan");
                         KamarSingleton.getInstance().addKamar(kamar);
-                        Intent intent = new Intent(getContext(), KamarListActivity.class);
+                        Intent intent = new Intent(getContext(), DataKamarActivity.class);
                         startActivity(intent);
                         getActivity().finish();
                     }
