@@ -29,7 +29,7 @@ public class DataKamarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kamar_list);
+        setContentView(R.layout.activity_data_kamar);
         ButterKnife.bind(this);
 
         kamars = KamarSingleton.getInstance().getKamars();

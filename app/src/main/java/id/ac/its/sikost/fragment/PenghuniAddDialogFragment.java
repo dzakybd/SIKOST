@@ -10,16 +10,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.its.sikost.R;
-import id.ac.its.sikost.activity.PenghuniListActivity;
+import id.ac.its.sikost.activity.DataPenghuniActivity;
 import id.ac.its.sikost.model.Kamar;
 import id.ac.its.sikost.model.KamarSingleton;
 import id.ac.its.sikost.model.Penghuni;
@@ -64,7 +61,7 @@ public class PenghuniAddDialogFragment extends DialogFragment {
                         String kamar = spnKamar.getSelectedItem().toString();
                         Penghuni penghuni = new Penghuni(nama, ktp, ttl, kamar);
                         PenghuniSingleton.getInstance().addPenghuni(penghuni);
-                        Intent intent = new Intent(getContext(), PenghuniListActivity.class);
+                        Intent intent = new Intent(getContext(), DataPenghuniActivity.class);
                         startActivity(intent);
                         getActivity().finish();
                     }

@@ -30,7 +30,7 @@ public class DataPenghuniActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_penghuni_list);
+        setContentView(R.layout.activity_data_penghuni);
 
         ButterKnife.bind(this);
 
