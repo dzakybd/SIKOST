@@ -11,7 +11,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.ac.its.sikost.EditHapusInterface;
+import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.model.Penghuni;
 

@@ -1,4 +1,4 @@
-package id.ac.its.sikost;
+package id.ac.its.sikost.interfaces;
 
 /**
  * Created by Zaki on 08/05/2017.
