@@ -24,7 +24,7 @@ import id.ac.its.sikost.model.KamarSingleton;
 
 public class DataKamarActivity extends AppCompatActivity implements EditHapusInterface {
 
-    private KamarAdapter adapter;
+    KamarAdapter adapter;
     @BindView(R.id.rv_kamar)
     RecyclerView rvKamar;
     @BindView(R.id.fab_add_kamar)
