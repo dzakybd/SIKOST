@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
     ImageView datapembayaran;
     @BindView(R.id.keluar)
     Button keluar;
+    @BindView(R.id.cardkamar)
+    CardView cardkamar;
+    @BindView(R.id.cardpenghuni)
+    CardView cardpenghuni;
+    @BindView(R.id.cardpindah)
+    CardView cardpindah;
+    @BindView(R.id.cardpembayaran)
+    CardView cardpembayaran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +67,19 @@ public class MainActivity extends AppCompatActivity {
                 .actionBar());
     }
 
-    @OnClick({R.id.datakamar, R.id.datapenghuni, R.id.pindahkamar, R.id.datapembayaran,R.id.keluar})
+    @OnClick({R.id.keluar,R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.datakamar:
+            case R.id.cardkamar:
                 startActivity(new Intent(MainActivity.this, DataKamarActivity.class));
                 break;
-            case R.id.datapenghuni:
+            case R.id.cardpenghuni:
                 startActivity(new Intent(MainActivity.this, DataPenghuniActivity.class));
                 break;
-            case R.id.pindahkamar:
+            case R.id.cardpindah:
                 startActivity(new Intent(MainActivity.this, PindahKamarActivity.class));
                 break;
-            case R.id.datapembayaran:
+            case R.id.cardpembayaran:
                 startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));
                 break;
             case R.id.keluar:
@@ -98,4 +107,5 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = pilihan.create();
         alert.show();
     }
+
 }
