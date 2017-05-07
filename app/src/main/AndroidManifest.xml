@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DataKamarActivity" />
-        <activity android:name=".activity.KamarInfoActivity" />
         <activity android:name=".activity.DataPenghuniActivity" />
         <activity android:name=".activity.Login" />
         <activity android:name=".activity.MainActivity" />

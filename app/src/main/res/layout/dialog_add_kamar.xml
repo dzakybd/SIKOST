@@ -12,12 +12,14 @@
         android:hint="Nama / Nomor Kamar"/>
 
     <EditText
+        android:inputType="numberSigned"
         android:id="@+id/et_kapasitas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Kapasitas"/>
 
     <EditText
+        android:inputType="numberSigned"
         android:id="@+id/et_biaya"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
