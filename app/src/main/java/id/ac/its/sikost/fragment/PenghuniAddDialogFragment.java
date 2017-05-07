@@ -44,5 +44,5 @@ public class PenghuniAddDialogFragment extends DialogFragment {
 //                .setNegativeButton("Batal", null);
         return builder.create();
     }
-    }
+
 }
