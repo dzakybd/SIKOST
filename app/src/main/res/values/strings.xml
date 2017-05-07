@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SIKOST</string>
+
+    <string name="kapasitas" formatted="false">Kapasitas : %d / %d</string>
+    <string name="biaya" formatted="false">Biaya : %d / %s</string>
+
+    <string name="edit">Edit</string>
+    <string name="hapus">Hapus</string>
+
+    <string name="nama">Nama : %s</string>
+    <string name="ktp">KTP : %s</string>
+    <string name="ttl">TTL : %s</string>
+    <string name="kamar">Kamar : %s</string>
+</resources>
