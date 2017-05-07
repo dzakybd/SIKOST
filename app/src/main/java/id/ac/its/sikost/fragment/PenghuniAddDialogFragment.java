@@ -7,18 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.activity.DataPenghuniActivity;
-import id.ac.its.sikost.model.Kamar;
-import id.ac.its.sikost.model.KamarSingleton;
 import id.ac.its.sikost.model.Penghuni;
 import id.ac.its.sikost.model.PenghuniSingleton;
 
@@ -41,13 +36,6 @@ public class PenghuniAddDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_add_penghuni, null);
         ButterKnife.bind(this, view);
-
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.planets_array, R.layout.dialog_add_penghuni);
-//        List<Kamar> kamars = KamarSingleton.getInstance().getKamars();
-//        for (Kamar kamar : kamars) {
-//            adapter.add(kamar.getNama());
-//        }
-//        spnKamar.setAdapter(adapter);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Tambah Kamar")

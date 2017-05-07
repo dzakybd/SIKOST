@@ -26,10 +26,10 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
     List<Kamar> kamars;
     EditHapusInterface listener;
 
-    public KamarAdapter(Context context, List<Kamar> kamars,EditHapusInterface listener) {
+    public KamarAdapter(Context context, List<Kamar> kamars, EditHapusInterface listener) {
         this.kamars = kamars;
         this.context = context;
-        this.listener=listener;
+        this.listener = listener;
     }
 
     @Override
