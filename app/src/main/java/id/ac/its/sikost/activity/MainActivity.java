@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .actionBar());
     }
 
-    @OnClick({R.id.keluar,R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran})
+    @OnClick({R.id.keluar, R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cardkamar:

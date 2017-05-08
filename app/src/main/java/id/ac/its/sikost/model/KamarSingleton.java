@@ -18,17 +18,17 @@ public class KamarSingleton {
 
     private KamarSingleton() {
         kamars = new ArrayList<>();
-        kamars.add(new Kamar("101",2,1,500000,"bulan"));
-        kamars.add(new Kamar("102",2,2,500000,"bulan"));
-        kamars.add(new Kamar("103",1,0,350000,"bulan"));
-        kamars.add(new Kamar("104",1,0,350000,"bulan"));
+        kamars.add(new Kamar("101", 2, 1, 500000, "bulan"));
+        kamars.add(new Kamar("102", 2, 2, 500000, "bulan"));
+        kamars.add(new Kamar("103", 1, 0, 350000, "bulan"));
+        kamars.add(new Kamar("104", 1, 0, 350000, "bulan"));
     }
 
     public List<Kamar> getKamars() {
         return kamars;
     }
 
-    public void addKamar(Kamar kamar){
+    public void addKamar(Kamar kamar) {
         kamars.add(kamar);
     }
 }

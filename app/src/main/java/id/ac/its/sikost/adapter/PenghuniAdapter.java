@@ -11,7 +11,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.ac.its.sikost.EditHapusInterface;
+import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.model.Penghuni;
 
@@ -25,10 +25,10 @@ public class PenghuniAdapter extends RecyclerView.Adapter<PenghuniAdapter.ViewHo
     List<Penghuni> penghunis;
     EditHapusInterface listener;
 
-    public PenghuniAdapter(Context context, List<Penghuni> penghunis,EditHapusInterface listener) {
+    public PenghuniAdapter(Context context, List<Penghuni> penghunis, EditHapusInterface listener) {
         this.penghunis = penghunis;
         this.context = context;
-        this.listener=listener;
+        this.listener = listener;
     }
 
     @Override
@@ -38,9 +38,8 @@ public class PenghuniAdapter extends RecyclerView.Adapter<PenghuniAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Penghuni penghuni = penghunis.get(position);
-        final int index = position;
         String nama = String.format(context.getString(R.string.nama), penghuni.getNama());
         String ktp = String.format(context.getString(R.string.ktp), penghuni.getKtp());
         String ttl = String.format(context.getString(R.string.ttl), penghuni.getTtl());
@@ -50,13 +49,15 @@ public class PenghuniAdapter extends RecyclerView.Adapter<PenghuniAdapter.ViewHo
         holder.tvTtlPenghuni.setText(ttl);
         holder.tvKamarPenghuni.setText(kamar);
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                listener.edit(index);
+                listener.edit(position);
             }
         });
         holder.btnHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                listener.hapus(index);
+                listener.hapus(position);
             }
         });
     }
@@ -66,7 +67,7 @@ public class PenghuniAdapter extends RecyclerView.Adapter<PenghuniAdapter.ViewHo
         return penghunis.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.tv_nama_penghuni)
         TextView tvNamaPenghuni;
@@ -76,9 +77,9 @@ public class PenghuniAdapter extends RecyclerView.Adapter<PenghuniAdapter.ViewHo
         TextView tvTtlPenghuni;
         @BindView(R.id.tv_kamar_penghuni)
         TextView tvKamarPenghuni;
-        @BindView(R.id.btn_edit)
+        @BindView(R.id.btn_edit_penghuni)
         TextView btnEdit;
-        @BindView(R.id.btn_hapus)
+        @BindView(R.id.btn_hapus_penghuni)
         TextView btnHapus;
 
         public ViewHolder(View itemView) {

@@ -16,7 +16,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.ac.its.sikost.EditHapusInterface;
+import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.adapter.KamarAdapter;
 import id.ac.its.sikost.model.Kamar;
@@ -29,7 +29,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
     RecyclerView rvKamar;
     @BindView(R.id.fab_add_kamar)
     FloatingActionButton fabAddKamar;
-    EditText et_nama,et_kapasitas,et_biaya;
+    EditText et_nama, et_kapasitas, et_biaya;
     List<Kamar> kamars;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -45,7 +45,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
         rvKamar.setLayoutManager(llm);
         rvKamar.setHasFixedSize(true);
 
-        adapter = new KamarAdapter(this,kamars,this);
+        adapter = new KamarAdapter(this, kamars, this);
         rvKamar.setAdapter(adapter);
 
         fabAddKamar.setOnClickListener(new View.OnClickListener() {
@@ -61,9 +61,9 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
     }
 
 
-    private void tambah(){
+    private void tambah() {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_kamar,null);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_kamar, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_kapasitas = (EditText) alertview.findViewById(R.id.et_kapasitas);
         et_biaya = (EditText) alertview.findViewById(R.id.et_biaya);
@@ -78,15 +78,15 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
                 adapter.notifyDataSetChanged();
             }
         }).setNegativeButton("Batal", null);
-        AlertDialog dialog=result.create();
+        AlertDialog dialog = result.create();
         dialog.show();
     }
 
     @Override
-    public void edit(final int index){
+    public void edit(final int index) {
         Kamar temp = kamars.get(index);
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_kamar,null);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_kamar, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_kapasitas = (EditText) alertview.findViewById(R.id.et_kapasitas);
         et_biaya = (EditText) alertview.findViewById(R.id.et_biaya);
@@ -105,12 +105,12 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
                 adapter.notifyDataSetChanged();
             }
         }).setNegativeButton("Batal", null);
-        AlertDialog dialog=result.create();
+        AlertDialog dialog = result.create();
         dialog.show();
     }
 
     @Override
-    public void hapus(final int index){
+    public void hapus(final int index) {
         AlertDialog.Builder pilihan = new AlertDialog.Builder(this);
         pilihan.setMessage("Anda ingin menghapus?");
         pilihan.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
