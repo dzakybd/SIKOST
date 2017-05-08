@@ -11,13 +11,11 @@ public class Penghuni implements Serializable {
     String nama;
     String ktp;
     String ttl;
-    String kamar;
 
-    public Penghuni(String nama, String ktp, String ttl, String kamar) {
+    public Penghuni(String nama, String ktp, String ttl) {
         this.nama = nama;
         this.ktp = ktp;
         this.ttl = ttl;
-        this.kamar = kamar;
     }
 
     public String getNama() {
@@ -42,13 +40,5 @@ public class Penghuni implements Serializable {
 
     public void setTtl(String ttl) {
         this.ttl = ttl;
-    }
-
-    public String getKamar() {
-        return kamar;
-    }
-
-    public void setKamar(String kamar) {
-        this.kamar = kamar;
     }
 }

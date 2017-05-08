@@ -1,6 +1,8 @@
 package id.ac.its.sikost.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,12 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
+import com.mikepenz.iconics.IconicsDrawable;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.R;
+import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.model.Kamar;
 
 /**
@@ -34,7 +39,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar_penghuni, parent, false);
         return new ViewHolder(view);
     }
 
@@ -57,6 +62,20 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
                 listener.hapus(index);
             }
         });
+
+        Drawable img;
+        img=new IconicsDrawable(context)
+                .icon(FontAwesome.Icon.faw_users)
+                .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
+                .actionBar();
+        img.setBounds(0, 0, 50, 50);
+        holder.tvKapasitasKamar.setCompoundDrawables(img, null, null, null);
+        img=new IconicsDrawable(context)
+                .icon(FontAwesome.Icon.faw_money)
+                .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
+                .actionBar();
+        img.setBounds(0, 0, 50, 50);
+        holder.tvBiayaKamar.setCompoundDrawables(img, null, null, null);
     }
 
     @Override

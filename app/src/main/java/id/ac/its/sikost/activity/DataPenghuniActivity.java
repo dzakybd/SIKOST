@@ -11,15 +11,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.adapter.PenghuniAdapter;
+import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.model.Penghuni;
 import id.ac.its.sikost.model.PenghuniSingleton;
 
@@ -34,7 +33,6 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
     EditText et_nama;
     EditText et_ktp;
     EditText et_ttl;
-    Spinner spn_kamar;
 
     List<Penghuni> penghunis;
     @BindView(R.id.toolbar)
@@ -86,11 +84,10 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
     public void edit(final int index) {
         Penghuni temp = penghunis.get(index);
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_penghuni, null);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_penghuni, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_ktp = (EditText) alertview.findViewById(R.id.et_ktp);
         et_ttl = (EditText) alertview.findViewById(R.id.et_ttl);
-        spn_kamar = (Spinner) alertview.findViewById(R.id.spn_kamar);
         et_nama.setText(temp.getNama());
         et_ktp.setText(temp.getKtp());
         et_ttl.setText(temp.getTtl());
@@ -100,11 +97,9 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
                 String nama = et_nama.getText().toString();
                 String ktp = et_ktp.getText().toString();
                 String ttl = et_ttl.getText().toString();
-                String kamar = spn_kamar.getSelectedItem().toString();
                 penghunis.get(index).setNama(nama);
                 penghunis.get(index).setKtp(ktp);
                 penghunis.get(index).setTtl(ttl);
-                penghunis.get(index).setKamar(kamar);
                 adapter.notifyDataSetChanged();
             }
         }).setNegativeButton("Batal", null);
@@ -134,11 +129,10 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
 
     private void tambah() {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertView = getLayoutInflater().inflate(R.layout.dialog_add_penghuni, null);
+        View alertView = getLayoutInflater().inflate(R.layout.dialog_data_penghuni, null);
         et_nama = (EditText) alertView.findViewById(R.id.et_nama);
         et_ktp = (EditText) alertView.findViewById(R.id.et_ktp);
         et_ttl = (EditText) alertView.findViewById(R.id.et_ttl);
-        spn_kamar = (Spinner) alertView.findViewById(R.id.spn_kamar);
         result.setView(alertView)
                 .setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
                     @Override
@@ -146,8 +140,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
                         String nama = et_nama.getText().toString();
                         String ktp = et_ktp.getText().toString();
                         String ttl = et_ttl.getText().toString();
-                        String kamar = spn_kamar.getSelectedItem().toString();
-                        Penghuni penghuni = new Penghuni(nama, ktp, ttl, kamar);
+                        Penghuni penghuni = new Penghuni(nama, ktp, ttl);
                         PenghuniSingleton.getInstance().addPenghuni(penghuni);
                         adapter.notifyDataSetChanged();
                     }

@@ -63,7 +63,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
 
     private void tambah() {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_kamar, null);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_kamar, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_kapasitas = (EditText) alertview.findViewById(R.id.et_kapasitas);
         et_biaya = (EditText) alertview.findViewById(R.id.et_biaya);
@@ -86,7 +86,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
     public void edit(final int index) {
         Kamar temp = kamars.get(index);
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_add_kamar, null);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_kamar, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_kapasitas = (EditText) alertview.findViewById(R.id.et_kapasitas);
         et_biaya = (EditText) alertview.findViewById(R.id.et_biaya);

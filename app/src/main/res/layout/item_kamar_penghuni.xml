@@ -41,7 +41,7 @@
                 android:text="@string/kapasitas"
                 android:gravity="center_vertical"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:drawableLeft="@drawable/ic_person_black_24dp"/>
+                />
 
             <TextView
                 android:id="@+id/tv_biaya_kamar"
@@ -51,7 +51,7 @@
                 android:text="@string/biaya"
                 android:gravity="center_vertical"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:drawableLeft="@drawable/ic_attach_money_black_24dp"/>
+                />
 
         </LinearLayout>
 
