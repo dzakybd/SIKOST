@@ -1,0 +1,22 @@
+Elisitasi pekan 1
+
+Tanggal : 8 mei 2017
+
+Nama sistem : SIKOST
+
+Spesifikasi :
+Sistem informasi untuk mengelola keuangan dan administrasi tempat kos.
+(1)Pemilik kos dapat mengetahui kamar mana saja ang masih kosong
+(2)Pemilik kos dapat mengelola pembayaran kos
+(3)Sistem dapat memfasilitasi pindah kamar
+
+Client :
+Adetiya Bagus Nusantara
+Nurul Wachidah		
+Andi Ersaldy Raisha P.
+
+Setelah melihat video dari prototipe SIKOST, pendapat beberapa klien terkait sistem informasi SIKOST dan fungsi-fungsinya
+-menggunakan platform android lebih memudahkan pengguna
+-masih ada fungsi (fitur) yang belum dapat digunakan 
+-awalnya client meminta agar sistem dikembangkan di platform web. tetapi setelah dikonsultasikan, client menyetujui sitem dikembangkan di platform android
+-client meminta database yang persistent
