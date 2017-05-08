@@ -16,6 +16,7 @@ Nurul Wachidah
 Andi Ersaldy Raisha P.
 
 Setelah melihat video dari prototipe SIKOST, pendapat beberapa klien terkait sistem informasi SIKOST dan fungsi-fungsinya
--Bagus: menggunakan platform android lebih memudahkan pengguna. akan tetapi masih ada fungsi (fitur) yang belum dapat digunakan
--Raisha:
--Nurul: -
+-menggunakan platform android lebih memudahkan pengguna
+-masih ada fungsi (fitur) yang belum dapat digunakan 
+-awalnya client meminta agar sistem dikembangkan di platform web. tetapi setelah dikonsultasikan, client menyetujui sitem dikembangkan di platform android
+-client meminta database yang persistent
