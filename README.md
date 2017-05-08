@@ -8,6 +8,12 @@ Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 
 (3)Sistem dapat memfasilitasi pindah kamar
 
+### APK
+Download [apk](https://github.com/dzakybd/SIKOST/blob/master/Dokumentasi-v1/APK-v1.apk?raw=true)
+
+### Video
+Download [video](https://github.com/dzakybd/SIKOST/blob/master/Dokumentasi-v1/Video-v1.mp4?raw=true)
+
 ### Login
 ![Login](https://github.com/dzakybd/SIKOST/blob/master/Dokumentasi-v1/Screenshot-v1/Login.png?raw=true)
 
