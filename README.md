@@ -1,4 +1,4 @@
-# SIKOST
+# SIKOST Versi-1
 
 Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 
