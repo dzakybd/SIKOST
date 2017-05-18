@@ -64,13 +64,13 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
         });
 
         Drawable img;
-        img=new IconicsDrawable(context)
+        img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_users)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
         holder.tvKapasitasKamar.setCompoundDrawables(img, null, null, null);
-        img=new IconicsDrawable(context)
+        img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_money)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();

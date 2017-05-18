@@ -121,11 +121,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
                 adapter.notifyDataSetChanged();
             }
         });
-        pilihan.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
+        pilihan.setNegativeButton("Tidak", null);
         AlertDialog alert = pilihan.create();
         alert.show();
     }

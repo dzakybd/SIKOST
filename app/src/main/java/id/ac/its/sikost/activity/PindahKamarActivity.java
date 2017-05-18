@@ -55,13 +55,14 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
     @BindView(R.id.viewtambah)
     LinearLayout viewtambah;
     List<Kamar> kamars;
-    List<Penghuni> penghunis,penghuniset,penghuniunset;
+    List<Penghuni> penghunis, penghuniset, penghuniunset;
     PenghuniPindahAdapter adapter;
     Kamar kamartemp;
     Penghuni penghunitemp;
-    HashMap<String,Integer> kamarMap,penghuniMap;
-    ArrayAdapter<String> adapter_kamar_spinner,adapter_penghuni_spinner;
-    List<String> opsikamar,opsipenghuni;
+    HashMap<String, Integer> kamarMap, penghuniMap;
+    ArrayAdapter<String> adapter_kamar_spinner, adapter_penghuni_spinner;
+    List<String> opsikamar, opsipenghuni;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +76,7 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
         penghunis = PenghuniSingleton.getInstance().getPenghunis();
 
         Drawable img;
-        img=new IconicsDrawable(this)
+        img = new IconicsDrawable(this)
                 .icon(FontAwesome.Icon.faw_users)
                 .color(ResourcesCompat.getColor(getResources(), R.color.primary, null))
                 .actionBar();
@@ -86,9 +87,9 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
         rvPenghuni.setHasFixedSize(true);
         opsikamar = new ArrayList<>();
         kamarMap = new HashMap<>();
-        for(Kamar k : kamars){
+        for (Kamar k : kamars) {
             opsikamar.add(k.getNama());
-            kamarMap.put(k.getNama(),kamars.indexOf(k));
+            kamarMap.put(k.getNama(), kamars.indexOf(k));
         }
         adapter_kamar_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opsikamar);
         adapter_kamar_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -100,6 +101,7 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
                 showkapasitas();
                 showpenghuni();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
                 // TODO Auto-generated method stub
@@ -108,12 +110,13 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
         });
 
     }
-    private void showtambah(){
+
+    private void showtambah() {
         opsipenghuni = new ArrayList<>();
         penghuniMap = new HashMap<>();
-        for(Penghuni p : penghuniunset){
+        for (Penghuni p : penghuniunset) {
             opsipenghuni.add(p.getNama());
-            penghuniMap.put(p.getNama(),penghunis.indexOf(p));
+            penghuniMap.put(p.getNama(), penghunis.indexOf(p));
         }
         adapter_penghuni_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opsipenghuni);
         adapter_penghuni_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -121,30 +124,33 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
         spinnerPenghuni.setVisibility(View.VISIBLE);
         tambah.setVisibility(View.VISIBLE);
     }
-    private void showkapasitas(){
+
+    private void showkapasitas() {
         String kapasitas = String.format(getString(R.string.kapasitas), kamartemp.getTerisi(), kamartemp.getKapasitas());
         tvKapasitasKamar.setText(kapasitas);
         tvKapasitasKamar.setVisibility(View.VISIBLE);
     }
-    private void showpenghuni(){
-        int counter=kamartemp.getTerisi();
-        penghuniset=new ArrayList<>();
-        penghuniunset=new ArrayList<>();
-        for(Penghuni p : penghunis){
-            if(counter<=0)penghuniunset.add(p);
+
+    private void showpenghuni() {
+        int counter = kamartemp.getTerisi();
+        penghuniset = new ArrayList<>();
+        penghuniunset = new ArrayList<>();
+        for (Penghuni p : penghunis) {
+            if (counter <= 0) penghuniunset.add(p);
             else penghuniset.add(p);
             counter--;
         }
         adapter = new PenghuniPindahAdapter(this, penghuniset, this);
         rvPenghuni.setAdapter(adapter);
         rvPenghuni.setVisibility(View.VISIBLE);
-        if(kamartemp.getKapasitas()-kamartemp.getTerisi()>0){
+        if (kamartemp.getKapasitas() - kamartemp.getTerisi() > 0) {
             showtambah();
-        }else{
+        } else {
             spinnerPenghuni.setVisibility(View.GONE);
             tambah.setVisibility(View.GONE);
         }
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

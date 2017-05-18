@@ -92,11 +92,10 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
     public void hapus(final int index) {
         Log.d("HAPUS", "" + adapter.getItemCount());
         AlertDialog.Builder pilihan = new AlertDialog.Builder(this);
-        if (adapter.getItemCount()==1){
+        if (adapter.getItemCount() == 1) {
             pilihan.setMessage("Tidak dapat menghapus. Jumlah minimal admin adalah 1.");
             pilihan.setPositiveButton("OK", null);
-        }
-        else {
+        } else {
             pilihan.setMessage("Anda ingin menghapus?");
             pilihan.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                 @Override
@@ -112,7 +111,7 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
 
     }
 
-    private void tambah(){
+    private void tambah() {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
         View alertview = getLayoutInflater().inflate(R.layout.dialog_data_admin, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);

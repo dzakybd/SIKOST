@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class PenghuniSingleton {
+
     private static final PenghuniSingleton ourInstance = new PenghuniSingleton();
 
     public static PenghuniSingleton getInstance() {

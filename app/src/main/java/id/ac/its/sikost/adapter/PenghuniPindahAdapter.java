@@ -59,13 +59,13 @@ public class PenghuniPindahAdapter extends RecyclerView.Adapter<PenghuniPindahAd
             }
         });
         Drawable img;
-        img=new IconicsDrawable(context)
+        img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_credit_card)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
         holder.tvKtpPenghuni.setCompoundDrawables(img, null, null, null);
-        img=new IconicsDrawable(context)
+        img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_calendar)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();

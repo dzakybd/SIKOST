@@ -118,11 +118,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
                 adapter.notifyDataSetChanged();
             }
         });
-        pilihan.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
+        pilihan.setNegativeButton("Tidak", null);
         AlertDialog alert = pilihan.create();
         alert.show();
     }
