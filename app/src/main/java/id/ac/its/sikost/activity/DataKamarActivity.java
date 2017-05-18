@@ -68,6 +68,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_kapasitas = (EditText) alertview.findViewById(R.id.et_kapasitas);
         et_biaya = (EditText) alertview.findViewById(R.id.et_biaya);
+        result.setTitle("Tambah Kamar");
         result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -94,6 +95,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
         et_nama.setText(temp.getNama());
         et_kapasitas.setText(String.valueOf(temp.getKapasitas()));
         et_biaya.setText(String.valueOf(temp.getBiaya()));
+        result.setTitle("Edit Kamar");
         result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

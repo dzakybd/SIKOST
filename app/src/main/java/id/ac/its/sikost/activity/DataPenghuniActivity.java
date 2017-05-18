@@ -91,6 +91,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
         et_nama.setText(temp.getNama());
         et_ktp.setText(temp.getKtp());
         et_ttl.setText(temp.getTtl());
+        result.setTitle("Edit Penghuni");
         result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -129,6 +130,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
         et_nama = (EditText) alertView.findViewById(R.id.et_nama);
         et_ktp = (EditText) alertView.findViewById(R.id.et_ktp);
         et_ttl = (EditText) alertView.findViewById(R.id.et_ttl);
+        result.setTitle("Tambah Penghuni");
         result.setView(alertView)
                 .setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
                     @Override

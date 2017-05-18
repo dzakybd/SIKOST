@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -21,8 +22,6 @@ import id.ac.its.sikost.adapter.AdminAdapter;
 import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.model.Admin;
 import id.ac.its.sikost.model.AdminSingleton;
-import id.ac.its.sikost.model.Kamar;
-import id.ac.its.sikost.model.KamarSingleton;
 
 public class DataAdminActivity extends AppCompatActivity implements EditHapusInterface {
 
@@ -73,6 +72,7 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
         et_nama.setText(admin.getNama());
         et_username.setText(admin.getUsername());
         et_password.setText(admin.getPassword());
+        result.setTitle("Edit Admin");
         result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -117,6 +117,7 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_username = (EditText) alertview.findViewById(R.id.et_username);
         et_password = (EditText) alertview.findViewById(R.id.et_password);
+        result.setTitle("Tambah Admin");
         result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -130,6 +131,18 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
         }).setNegativeButton("Batal", null);
         AlertDialog dialog = result.create();
         dialog.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
