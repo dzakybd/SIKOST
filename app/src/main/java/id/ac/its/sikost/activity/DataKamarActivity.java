@@ -25,12 +25,13 @@ import id.ac.its.sikost.model.KamarSingleton;
 public class DataKamarActivity extends AppCompatActivity implements EditHapusInterface {
 
     KamarAdapter adapter;
+    List<Kamar> kamars;
+
+    EditText et_nama, et_kapasitas, et_biaya;
     @BindView(R.id.rv_kamar)
     RecyclerView rvKamar;
     @BindView(R.id.fab_add_kamar)
     FloatingActionButton fabAddKamar;
-    EditText et_nama, et_kapasitas, et_biaya;
-    List<Kamar> kamars;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 

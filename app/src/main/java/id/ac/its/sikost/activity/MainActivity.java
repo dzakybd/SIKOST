@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, PindahKamarActivity.class));
                 break;
             case R.id.cardpembayaran:
-                startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));
+                startActivity(new Intent(MainActivity.this, DataAdminActivity.class));
                 break;
             case R.id.keluar:
                 out();
