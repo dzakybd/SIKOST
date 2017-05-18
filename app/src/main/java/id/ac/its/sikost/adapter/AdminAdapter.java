@@ -58,6 +58,18 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.ViewHolder> 
         holder.tvNomorAdmin.setText(String.valueOf(index + 1));
         holder.tvNamaAdmin.setText(admin.getNama());
         holder.tvUsernameAdmin.setText(admin.getUsername());
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.edit(index);
+            }
+        });
+        holder.btnHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.hapus(index);
+            }
+        });
     }
 
     @Override
