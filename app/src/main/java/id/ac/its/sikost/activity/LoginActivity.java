@@ -4,8 +4,6 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 .setUseDefaultSharedPreference(true)
                 .build();
 
-        if (Prefs.getBoolean("logged", false)) {
+        if (!Prefs.getString("admin", "").contentEquals("")) {
             move();
         }
     }
@@ -67,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         List<Admin> admins = AdminSingleton.getInstance().getAdmins();
         for (Admin admin : admins) {
             if (admin.getUsername().equals(username) && admin.getPassword().equals(password)) {
-                Prefs.putBoolean("logged", true);
+                Prefs.putString("admin", admin.getNama());
                 move();
                 return;
             }

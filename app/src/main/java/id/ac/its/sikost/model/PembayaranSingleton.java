@@ -18,7 +18,7 @@ public class PembayaranSingleton {
 
     private PembayaranSingleton() {
         pembayarans = new ArrayList<>();
-        pembayarans.add(new Pembayaran("101", "Budi", "Admin", 100000,1,2017));
+        pembayarans.add(new Pembayaran("101", "Budi", "Admin","2 Mei 2017", 100000,1,2017));
     }
 
     public List<Pembayaran> getPembayarans() {

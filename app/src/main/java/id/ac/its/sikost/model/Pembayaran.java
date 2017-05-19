@@ -5,10 +5,11 @@ package id.ac.its.sikost.model;
  */
 
 public class Pembayaran {
-    public String kamar,pembayar,petugas;
+    public String kamar,pembayar,petugas,tanggal;
     public int nominal,bulan,tahun;
 
-    public Pembayaran(String kamar, String pembayar, String petugas, int nominal, int bulan, int tahun) {
+    public Pembayaran(String kamar, String pembayar, String petugas, String tanggal, int nominal, int bulan, int tahun) {
+        this.tanggal = tanggal;
         this.kamar = kamar;
         this.pembayar = pembayar;
         this.petugas = petugas;
