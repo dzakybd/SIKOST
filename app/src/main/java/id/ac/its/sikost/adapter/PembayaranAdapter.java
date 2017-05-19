@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.interfaces.EditHapusInterface;
-import id.ac.its.sikost.model.Pengeluaran;
+import id.ac.its.sikost.model.Pembayaran;
 
 /**
  * Created by Ilham Aulia Majid on 07-May-17.
@@ -28,30 +28,31 @@ import id.ac.its.sikost.model.Pengeluaran;
 public class PembayaranAdapter extends RecyclerView.Adapter<PembayaranAdapter.ViewHolder> {
 
     Context context;
-    List<Pengeluaran> pengeluarans;
+    List<Pembayaran> pembayarans;
     EditHapusInterface listener;
 
 
-    public PembayaranAdapter(Context context, List<Pengeluaran> pengeluarans, EditHapusInterface listener) {
-        this.pengeluarans = pengeluarans;
+
+    public PembayaranAdapter(Context context, List<Pembayaran> pembayarans, EditHapusInterface listener) {
+        this.pembayarans = pembayarans;
         this.context = context;
         this.listener = listener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pengeluaran, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pembayaran, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Pengeluaran pengeluaran = pengeluarans.get(position);
+        Pembayaran pembayaran = pembayarans.get(position);
         final int index = position;
-        holder.tvJudulPengeluaran.setText(pengeluaran.judul);
-        holder.tvNominalPengeluaran.setText(String.valueOf(pengeluaran.nominal));
-        holder.tvPetugasPengeluaran.setText(pengeluaran.petugas);
-        holder.tvTanggalPengeluaran.setText(pengeluaran.tanggal);
+        holder.tvKamarPembayaran.setText(pembayaran.kamar);
+        holder.tvNominalPembayaran.setText(String.valueOf(pembayaran.nominal));
+        holder.tvPetugasPembayaran.setText(pembayaran.petugas);
+        holder.tvTanggalPembayaran.setText(pembayaran.tanggal);
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 listener.edit(index);
@@ -69,42 +70,42 @@ public class PembayaranAdapter extends RecyclerView.Adapter<PembayaranAdapter.Vi
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
-        holder.tvTanggalPengeluaran.setCompoundDrawables(img, null, null, null);
+        holder.tvTanggalPembayaran.setCompoundDrawables(img, null, null, null);
         img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_money)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
-        holder.tvNominalPengeluaran.setCompoundDrawables(img, null, null, null);
+        holder.tvNominalPembayaran.setCompoundDrawables(img, null, null, null);
         img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_user_secret)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
-        holder.tvPetugasPengeluaran.setCompoundDrawables(img, null, null, null);
+        holder.tvPetugasPembayaran.setCompoundDrawables(img, null, null, null);
     }
 
     @Override
     public int getItemCount() {
-        return pengeluarans.size();
+        return pembayarans.size();
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tv_judul_pengeluaran)
-        TextView tvJudulPengeluaran;
-        @BindView(R.id.tv_tanggal_pengeluaran)
-        TextView tvTanggalPengeluaran;
-        @BindView(R.id.tv_nominal_pengeluaran)
-        TextView tvNominalPengeluaran;
-        @BindView(R.id.tv_petugas_pengeluaran)
-        TextView tvPetugasPengeluaran;
+        @BindView(R.id.tv_kamar_pembayaran)
+        TextView tvKamarPembayaran;
+        @BindView(R.id.tv_tanggal_pembayaran)
+        TextView tvTanggalPembayaran;
+        @BindView(R.id.tv_nominal_pembayaran)
+        TextView tvNominalPembayaran;
+        @BindView(R.id.tv_petugas_pembayaran)
+        TextView tvPetugasPembayaran;
         @BindView(R.id.btn_edit)
         TextView btnEdit;
         @BindView(R.id.btn_hapus)
         TextView btnHapus;
-        @BindView(R.id.cv_pengeluaran)
-        CardView cvPengeluaran;
+        @BindView(R.id.cv_pembayaran)
+        CardView cvPembayaran;
 
         public ViewHolder(View itemView) {
             super(itemView);
