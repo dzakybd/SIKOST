@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,11 +31,13 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
     Context context;
     List<Kamar> kamars;
     EditHapusInterface listener;
+    List<Kamar> kamarsFilter;
 
     public KamarAdapter(Context context, List<Kamar> kamars, EditHapusInterface listener) {
         this.kamars = kamars;
         this.context = context;
         this.listener = listener;
+        this.kamarsFilter = kamars;
     }
 
     @Override
@@ -45,7 +48,7 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Kamar kamar = kamars.get(position);
+        Kamar kamar = kamarsFilter.get(position);
         final int index = position;
         holder.tvNamaKamar.setText(kamar.getNama());
         String kapasitas = String.format(context.getString(R.string.kapasitas), kamar.getTerisi(), kamar.getKapasitas());
@@ -80,7 +83,34 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return kamars.size();
+        return kamarsFilter.size();
+    }
+
+    public void filterSemua() {
+        kamarsFilter = kamars;
+        notifyDataSetChanged();
+    }
+
+    public void filterTersedia(){
+        List<Kamar> temp = new ArrayList<>();
+        for (Kamar kamar:kamars){
+            if (kamar.getTerisi() < kamar.getKapasitas()){
+                temp.add(kamar);
+            }
+        }
+        kamarsFilter = temp;
+        notifyDataSetChanged();
+    }
+
+    public void filterPenuh(){
+        List<Kamar> temp = new ArrayList<>();
+        for (Kamar kamar:kamars){
+            if (kamar.getTerisi() == kamar.getKapasitas()){
+                temp.add(kamar);
+            }
+        }
+        kamarsFilter = temp;
+        notifyDataSetChanged();
     }
 
 
@@ -102,6 +132,5 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
-
     }
 }
