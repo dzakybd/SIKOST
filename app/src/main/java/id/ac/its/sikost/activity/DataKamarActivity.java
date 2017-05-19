@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -144,14 +146,35 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
 
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_filter, menu);
+        menu.findItem(R.id.item_semua).setChecked(true);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;
+            case R.id.item_semua:
+                adapter.filterSemua();
+                item.setChecked(true);
+                break;
+            case R.id.item_tersedia:
+                adapter.filterTersedia();
+                item.setChecked(true);
+                break;
+            case R.id.item_penuh:
+                adapter.filterPenuh();
+                item.setChecked(true);
+                break;
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
+
+
     }
 }
