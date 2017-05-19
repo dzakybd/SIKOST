@@ -44,10 +44,9 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
-        android:text="@string/kapasitas"
+        android:text="Rekap :"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/primary_text"
-        android:visibility="invisible" />
+        android:textColor="@color/primary_text" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_bayar"
