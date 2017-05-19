@@ -2,15 +2,36 @@
 
 Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 
-(1)Pemilik kos dapat mengetahui kamar mana saja ang masih kosong
+### Daftar spesifikasi yang dikerjakan :
 
-(2)Pemilik kos dapat mengelola pembayaran kos
+Done - 1.1.	Registrasi Data Penyewa
+Done - 1.2.	Lihat Data Penyewa
+Done - 1.3.	Merubah Data Penyewa
+Done - 1.4.	Menghapus Data Penyewa
+Done - 2.1.	Registrasi Administrator Baru
+Done - 2.2.	Lihat Data Administrator
+Done - 2.3.	Merubah Data Administrator
+Done - 2.4.	Menghapus Data Administrator
+3.1.	Menambah Nama Jenis Pengeluaran
+3.2.	Merubah Nama Jenis Pengeluaran
+Done - 4.1.	Registrasi Pembayaran Kamar
+Done - 4.2.	Lihat Histori Pembayaran Kamar
+Done - 4.3.	Merubah Histori Pembayaran Kamar
+Done - 4.4.	Menghapus Histori Pembayaran Kamar
+Done - 5.1.	Menambah Pengeluaran Kost
+Done - 5.2.	Melihat Histori Pengeluaran Kost
+Done - 5.3.	Merubah Histori Pengeluaran Kost
+Done - 6.1.	Menyewa Kamar
+Done - 6.2.	Melihat Histori Sewa Kamar
+Done - 6.3.	Pindah Kamar
+Done - 7.1.	Menambah Nomor Kamar
+Done - 7.2.	Merubah Nomor Kamar
+Done - 7.3.	Menghapus Nomor Kamar
+Done - 8.1.	Melihat Ketersediaan Kamar
 
-(3)Sistem dapat memfasilitasi pindah kamar
 
 ### APK
-
-### Video
+Download [apk](https://github.com/dzakybd/SIKOST/blob/Versi-2/Dokumentasi-v2/app-release-v2.apk?raw=true)
 
 ### Login
 ![Login](https://github.com/dzakybd/SIKOST/blob/Versi-2/Dokumentasi-v2/Screenshot-v2/Login.png?raw=true)
