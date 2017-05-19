@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
     CardView cardpindah;
     @BindView(R.id.cardpembayaran)
     CardView cardpembayaran;
+    @BindView(R.id.datapengeluaran)
+    ImageView datapengeluaran;
+    @BindView(R.id.cardpengeluaran)
+    CardView cardpengeluaran;
+    @BindView(R.id.dataadmin)
+    ImageView dataadmin;
+    @BindView(R.id.cardadmin)
+    CardView cardadmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 .actionBar());
     }
 
-    @OnClick({R.id.keluar, R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran})
+    @OnClick({R.id.keluar, R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran, R.id.cardadmin, R.id.cardpengeluaran})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cardkamar:
@@ -80,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, PindahKamarActivity.class));
                 break;
             case R.id.cardpembayaran:
+                startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));
+                break;
+            case R.id.cardpengeluaran:
+                startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));
+                break;
+            case R.id.cardadmin:
                 startActivity(new Intent(MainActivity.this, DataAdminActivity.class));
                 break;
             case R.id.keluar:
