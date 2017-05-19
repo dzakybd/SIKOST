@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_filter"
+        android:title="Filter"
+        app:showAsAction="always">
+
+        <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/item_semua"
+                android:title="Semua" />
+            <item android:id="@+id/item_tersedia"
+                android:title="Tersedia" />
+            <item android:id="@+id/item_penuh"
+                android:title="Penuh" />
+
+        </group>
+
+    </item>
+</menu>
