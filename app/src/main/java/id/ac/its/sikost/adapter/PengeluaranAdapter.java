@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.interfaces.EditHapusInterface;
-import id.ac.its.sikost.model.Kamar;
+import id.ac.its.sikost.model.Pengeluaran;
 
 /**
  * Created by Ilham Aulia Majid on 07-May-17.
@@ -28,30 +28,30 @@ import id.ac.its.sikost.model.Kamar;
 public class PengeluaranAdapter extends RecyclerView.Adapter<PengeluaranAdapter.ViewHolder> {
 
     Context context;
-    List<Kamar> kamars;
+    List<Pengeluaran> pengeluarans;
     EditHapusInterface listener;
 
-    public PengeluaranAdapter(Context context, List<Kamar> kamars, EditHapusInterface listener) {
-        this.kamars = kamars;
+
+    public PengeluaranAdapter(Context context, List<Pengeluaran> pengeluarans, EditHapusInterface listener) {
+        this.pengeluarans = pengeluarans;
         this.context = context;
         this.listener = listener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar_penghuni, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pengeluaran, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Kamar kamar = kamars.get(position);
+        Pengeluaran pengeluaran = pengeluarans.get(position);
         final int index = position;
-        holder.tvNamaKamar.setText(kamar.getNama());
-        String kapasitas = String.format(context.getString(R.string.kapasitas), kamar.getTerisi(), kamar.getKapasitas());
-        holder.tvKapasitasKamar.setText(kapasitas);
-        String biaya = String.format(context.getString(R.string.biaya), kamar.getBiaya(), kamar.getBiayaSatuan());
-        holder.tvBiayaKamar.setText(biaya);
+        holder.tvJudulPengeluaran.setText(pengeluaran.judul);
+        holder.tvNominalPengeluaran.setText(String.valueOf(pengeluaran.nominal));
+        holder.tvPetugasPengeluaran.setText(pengeluaran.petugas);
+        holder.tvTanggalPengeluaran.setText(pengeluaran.tanggal);
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 listener.edit(index);
@@ -65,38 +65,46 @@ public class PengeluaranAdapter extends RecyclerView.Adapter<PengeluaranAdapter.
 
         Drawable img;
         img = new IconicsDrawable(context)
-                .icon(FontAwesome.Icon.faw_users)
+                .icon(FontAwesome.Icon.faw_calendar)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
-        holder.tvKapasitasKamar.setCompoundDrawables(img, null, null, null);
+        holder.tvTanggalPengeluaran.setCompoundDrawables(img, null, null, null);
         img = new IconicsDrawable(context)
                 .icon(FontAwesome.Icon.faw_money)
                 .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
-        holder.tvBiayaKamar.setCompoundDrawables(img, null, null, null);
+        holder.tvNominalPengeluaran.setCompoundDrawables(img, null, null, null);
+        img = new IconicsDrawable(context)
+                .icon(FontAwesome.Icon.faw_user_secret)
+                .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
+                .actionBar();
+        img.setBounds(0, 0, 50, 50);
+        holder.tvPetugasPengeluaran.setCompoundDrawables(img, null, null, null);
     }
 
     @Override
     public int getItemCount() {
-        return kamars.size();
+        return pengeluarans.size();
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tv_nama_kamar)
-        TextView tvNamaKamar;
-        @BindView(R.id.tv_kapasitas_kamar)
-        TextView tvKapasitasKamar;
-        @BindView(R.id.tv_biaya_kamar)
-        TextView tvBiayaKamar;
+        @BindView(R.id.tv_judul_pengeluaran)
+        TextView tvJudulPengeluaran;
+        @BindView(R.id.tv_tanggal_pengeluaran)
+        TextView tvTanggalPengeluaran;
+        @BindView(R.id.tv_nominal_pengeluaran)
+        TextView tvNominalPengeluaran;
+        @BindView(R.id.tv_petugas_pengeluaran)
+        TextView tvPetugasPengeluaran;
         @BindView(R.id.btn_edit)
         TextView btnEdit;
         @BindView(R.id.btn_hapus)
         TextView btnHapus;
-        @BindView(R.id.cv_kamar)
-        CardView cvKamar;
+        @BindView(R.id.cv_pengeluaran)
+        CardView cvPengeluaran;
 
         public ViewHolder(View itemView) {
             super(itemView);

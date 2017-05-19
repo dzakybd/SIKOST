@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));
                 break;
             case R.id.cardpengeluaran:
-                startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));
+                startActivity(new Intent(MainActivity.this, DataPengeluaranActivity.class));
                 break;
             case R.id.cardadmin:
                 startActivity(new Intent(MainActivity.this, DataAdminActivity.class));
