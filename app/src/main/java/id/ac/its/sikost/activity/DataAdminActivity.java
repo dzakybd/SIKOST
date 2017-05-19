@@ -13,11 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.its.sikost.R;
+import id.ac.its.sikost.Utils;
 import id.ac.its.sikost.adapter.AdminAdapter;
 import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.model.Admin;
@@ -63,30 +65,67 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
 
     @Override
     public void edit(final int index) {
-        Admin admin = admins.get(index);
-        AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_admin, null);
-        et_nama = (EditText) alertview.findViewById(R.id.et_nama);
-        et_username = (EditText) alertview.findViewById(R.id.et_username);
-        et_password = (EditText) alertview.findViewById(R.id.et_password);
+        final Admin admin = admins.get(index);
+        final AlertDialog dialog = buildDialog();
         et_nama.setText(admin.getNama());
         et_username.setText(admin.getUsername());
         et_password.setText(admin.getPassword());
-        result.setTitle("Edit Admin");
-        result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
+                if (isEmpty()) return;
+                String nama = et_nama.getText().toString();
+                String username = et_username.getText().toString();
+                String password = et_password.getText().toString();
+                admin.setNama(nama);
+                admin.setUsername(username);
+                admin.setPassword(password);
+                adapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+        });
+    }
+
+    private void tambah() {
+        final AlertDialog dialog = buildDialog();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isEmpty()) return;
                 String nama = et_nama.getText().toString();
                 String username = et_username.getText().toString();
                 String password = et_password.getText().toString();
                 Admin admin = new Admin(nama, username, password);
                 AdminSingleton.getInstance().addAdmin(admin);
                 adapter.notifyDataSetChanged();
+                dialog.dismiss();
             }
-        }).setNegativeButton("Batal", null);
-        AlertDialog dialog = result.create();
-        dialog.show();
+        });
     }
+
+    private AlertDialog buildDialog() {
+        AlertDialog.Builder result = new AlertDialog.Builder(this);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_admin, null);
+        et_nama = (EditText) alertview.findViewById(R.id.et_nama);
+        et_username = (EditText) alertview.findViewById(R.id.et_username);
+        et_password = (EditText) alertview.findViewById(R.id.et_password);
+        result.setTitle("Tambah Admin")
+                .setView(alertview)
+                .setPositiveButton("Simpan", null)
+                .setNegativeButton("Batal", null);
+        final AlertDialog dialog = result.create();
+        dialog.show();
+        return dialog;
+    }
+
+    private boolean isEmpty() {
+        List<EditText> editTexts = new ArrayList<>();
+        editTexts.add(et_nama);
+        editTexts.add(et_username);
+        editTexts.add(et_password);
+        return Utils.setEmptyErrorMessage(editTexts, "Wajib diisi");
+    }
+
 
     @Override
     public void hapus(final int index) {
@@ -111,28 +150,6 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
 
     }
 
-    private void tambah() {
-        AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_admin, null);
-        et_nama = (EditText) alertview.findViewById(R.id.et_nama);
-        et_username = (EditText) alertview.findViewById(R.id.et_username);
-        et_password = (EditText) alertview.findViewById(R.id.et_password);
-        result.setTitle("Tambah Admin");
-        result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String nama = et_nama.getText().toString();
-                String username = et_username.getText().toString();
-                String password = et_password.getText().toString();
-                Admin admin = new Admin(nama, username, password);
-                AdminSingleton.getInstance().addAdmin(admin);
-                adapter.notifyDataSetChanged();
-            }
-        }).setNegativeButton("Batal", null);
-        AlertDialog dialog = result.create();
-        dialog.show();
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -144,5 +161,4 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

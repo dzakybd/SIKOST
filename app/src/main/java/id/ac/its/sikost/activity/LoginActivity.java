@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.pixplicity.easyprefs.library.Prefs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -56,11 +57,11 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.login_button)
     public void onViewClicked() {
-        Utils.setEmptyErrorMessage(loginUsername, "Username harus diisi.");
-        Utils.setEmptyErrorMessage(loginPassword, "Password harus diisi");
-        if(Utils.isEmpty(loginUsername) || Utils.isEmpty(loginPassword)){
-            return;
-        }
+        List<EditText> editTexts = new ArrayList<>();
+        editTexts.add(loginUsername);
+        editTexts.add(loginPassword);
+        boolean empty = Utils.setEmptyErrorMessage(editTexts, "Wajib diisi.");
+        if (empty) return;
         String username = loginUsername.getText().toString();
         String password = loginPassword.getText().toString();
         List<Admin> admins = AdminSingleton.getInstance().getAdmins();

@@ -3,6 +3,8 @@ package id.ac.its.sikost;
 import android.text.TextUtils;
 import android.widget.EditText;
 
+import java.util.List;
+
 /**
  * Created by Ilham Aulia Majid on 19-May-17.
  */
@@ -18,5 +20,14 @@ public class Utils {
         if (isEmpty(editText)) {
             editText.setError(message);
         }
+    }
+
+    public static boolean setEmptyErrorMessage(List<EditText> editTexts, CharSequence message){
+        boolean empty = false;
+        for (EditText editText:editTexts){
+            setEmptyErrorMessage(editText, message);
+            if (isEmpty(editText)) empty = true;
+        }
+        return empty;
     }
 }
