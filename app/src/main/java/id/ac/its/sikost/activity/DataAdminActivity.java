@@ -66,7 +66,7 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
     @Override
     public void edit(final int index) {
         final Admin admin = admins.get(index);
-        final AlertDialog dialog = buildDialog();
+        final AlertDialog dialog = buildDialog("Edit Admin");
         et_nama.setText(admin.getNama());
         et_username.setText(admin.getUsername());
         et_password.setText(admin.getPassword());
@@ -87,7 +87,7 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
     }
 
     private void tambah() {
-        final AlertDialog dialog = buildDialog();
+        final AlertDialog dialog = buildDialog("Tambah Admin");
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,13 +103,13 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
         });
     }
 
-    private AlertDialog buildDialog() {
+    private AlertDialog buildDialog(String title) {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
         View alertview = getLayoutInflater().inflate(R.layout.dialog_data_admin, null);
         et_nama = (EditText) alertview.findViewById(R.id.et_nama);
         et_username = (EditText) alertview.findViewById(R.id.et_username);
         et_password = (EditText) alertview.findViewById(R.id.et_password);
-        result.setTitle("Tambah Admin")
+        result.setTitle(title)
                 .setView(alertview)
                 .setPositiveButton("Simpan", null)
                 .setNegativeButton("Batal", null);

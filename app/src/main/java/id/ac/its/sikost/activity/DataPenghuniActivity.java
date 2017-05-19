@@ -12,11 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.its.sikost.R;
+import id.ac.its.sikost.Utils;
 import id.ac.its.sikost.adapter.PenghuniAdapter;
 import id.ac.its.sikost.interfaces.EditHapusInterface;
 import id.ac.its.sikost.model.Penghuni;
@@ -69,44 +71,68 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void edit(final int index) {
-        Penghuni temp = penghunis.get(index);
-        AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_penghuni, null);
-        et_nama = (EditText) alertview.findViewById(R.id.et_nama);
-        et_ktp = (EditText) alertview.findViewById(R.id.et_ktp);
-        et_ttl = (EditText) alertview.findViewById(R.id.et_ttl);
-        et_nama.setText(temp.getNama());
-        et_ktp.setText(temp.getKtp());
-        et_ttl.setText(temp.getTtl());
-        result.setTitle("Edit Penghuni");
-        result.setView(alertview).setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
+        final Penghuni penghuni = penghunis.get(index);
+        final AlertDialog dialog = buildDialog("Edit Penghuni");
+        et_nama.setText(penghuni.getNama());
+        et_ktp.setText(penghuni.getKtp());
+        et_ttl.setText(penghuni.getTtl());
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
+                if (isEmpty()) return;
                 String nama = et_nama.getText().toString();
                 String ktp = et_ktp.getText().toString();
                 String ttl = et_ttl.getText().toString();
-                penghunis.get(index).setNama(nama);
-                penghunis.get(index).setKtp(ktp);
-                penghunis.get(index).setTtl(ttl);
+                penghuni.setNama(nama);
+                penghuni.setKtp(ktp);
+                penghuni.setTtl(ttl);
                 adapter.notifyDataSetChanged();
+                dialog.dismiss();
             }
-        }).setNegativeButton("Batal", null);
+        });
+    }
+
+    private void tambah() {
+        final AlertDialog dialog = buildDialog("Tambah Penghuni");
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isEmpty()) return;
+                String nama = et_nama.getText().toString();
+                String ktp = et_ktp.getText().toString();
+                String ttl = et_ttl.getText().toString();
+                Penghuni penghuni = new Penghuni(nama, ktp, ttl);
+                PenghuniSingleton.getInstance().addPenghuni(penghuni);
+                adapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+        });
+    }
+
+    private AlertDialog buildDialog(String title) {
+        AlertDialog.Builder result = new AlertDialog.Builder(this);
+        View alertView = getLayoutInflater().inflate(R.layout.dialog_data_penghuni, null);
+        et_nama = (EditText) alertView.findViewById(R.id.et_nama);
+        et_ktp = (EditText) alertView.findViewById(R.id.et_ktp);
+        et_ttl = (EditText) alertView.findViewById(R.id.et_ttl);
+        result.setTitle(title)
+                .setView(alertView)
+                .setPositiveButton("Simpan", null)
+                .setNegativeButton("Batal", null);
         AlertDialog dialog = result.create();
         dialog.show();
+        return dialog;
     }
+
+    private boolean isEmpty() {
+        List<EditText> editTexts = new ArrayList<>();
+        editTexts.add(et_nama);
+        editTexts.add(et_ktp);
+        editTexts.add(et_ttl);
+        return Utils.setEmptyErrorMessage(editTexts, "Wajib diisi");
+    }
+
 
     @Override
     public void hapus(final int index) {
@@ -124,27 +150,16 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
         alert.show();
     }
 
-    private void tambah() {
-        AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertView = getLayoutInflater().inflate(R.layout.dialog_data_penghuni, null);
-        et_nama = (EditText) alertView.findViewById(R.id.et_nama);
-        et_ktp = (EditText) alertView.findViewById(R.id.et_ktp);
-        et_ttl = (EditText) alertView.findViewById(R.id.et_ttl);
-        result.setTitle("Tambah Penghuni");
-        result.setView(alertView)
-                .setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String nama = et_nama.getText().toString();
-                        String ktp = et_ktp.getText().toString();
-                        String ttl = et_ttl.getText().toString();
-                        Penghuni penghuni = new Penghuni(nama, ktp, ttl);
-                        PenghuniSingleton.getInstance().addPenghuni(penghuni);
-                        adapter.notifyDataSetChanged();
-                    }
-                })
-                .setNegativeButton("Batal", null);
-        AlertDialog dialog = result.create();
-        dialog.show();
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
