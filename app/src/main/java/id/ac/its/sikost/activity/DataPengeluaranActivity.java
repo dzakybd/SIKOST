@@ -64,7 +64,6 @@ public class DataPengeluaranActivity extends AppCompatActivity implements EditHa
         rvPengeluaran.setHasFixedSize(true);
         adapter = new PengeluaranAdapter(this, pengeluarans, this);
         rvPengeluaran.setAdapter(adapter);
-
     }
 
     @Override
