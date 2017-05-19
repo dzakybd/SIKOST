@@ -56,12 +56,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.login_button)
     public void onViewClicked() {
-        if (Utils.isEmpty(loginUsername)) {
-            loginUsername.setError("Username harus diisi.");
-            return;
-        }
-        if (Utils.isEmpty(loginPassword)) {
-            loginPassword.setError("Password harus diisi");
+        Utils.setEmptyErrorMessage(loginUsername, "Username harus diisi.");
+        Utils.setEmptyErrorMessage(loginPassword, "Password harus diisi");
+        if(Utils.isEmpty(loginUsername) || Utils.isEmpty(loginPassword)){
             return;
         }
         String username = loginUsername.getText().toString();

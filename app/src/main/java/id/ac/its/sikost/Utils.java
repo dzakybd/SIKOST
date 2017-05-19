@@ -13,4 +13,10 @@ public class Utils {
         String text = editText.getText().toString().trim();
         return TextUtils.isEmpty(text);
     }
+
+    public static void setEmptyErrorMessage(EditText editText, CharSequence message){
+        if (isEmpty(editText)) {
+            editText.setError(message);
+        }
+    }
 }
