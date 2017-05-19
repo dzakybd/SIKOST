@@ -22,7 +22,8 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.DataPembayaranActivity" />
         <activity android:name=".activity.PindahKamarActivity" />
-        <activity android:name=".activity.DataAdminActivity"></activity>
+        <activity android:name=".activity.DataAdminActivity"/>
+        <activity android:name=".activity.DataPengeluaranActivity"/>
     </application>
 
 </manifest>
