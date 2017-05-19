@@ -5,14 +5,13 @@ package id.ac.its.sikost.model;
  */
 
 public class Pengeluaran {
-    public String judul,petugas;
-    public int nominal,bulan,tahun;
+    public String judul,petugas,tanggal;
+    public int nominal;
 
-    public Pengeluaran(String judul, String petugas, int nominal, int bulan, int tahun) {
+    public Pengeluaran(String judul, String petugas, String tanggal, int nominal) {
         this.judul = judul;
         this.petugas = petugas;
         this.nominal = nominal;
-        this.bulan = bulan;
-        this.tahun = tahun;
+        this.tanggal = tanggal;
     }
 }
