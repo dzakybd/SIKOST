@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".activity.DataKamarActivity" />
         <activity android:name=".activity.DataPenghuniActivity" />
-        <activity android:name=".activity.Login" />
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.DataPembayaranActivity" />
         <activity android:name=".activity.PindahKamarActivity" />

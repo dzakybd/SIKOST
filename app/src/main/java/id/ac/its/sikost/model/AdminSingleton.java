@@ -20,7 +20,7 @@ public class AdminSingleton {
 
     private AdminSingleton() {
         admins = new ArrayList<>();
-        admins.add(new Admin("Pemilik", "pemilik", "pemilik"));
+        admins.add(new Admin("Admin", "admin", "admin"));
     }
 
     public List<Admin> getAdmins() {

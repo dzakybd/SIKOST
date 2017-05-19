@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_height="match_parent"
-    tools:context="id.ac.its.sikost.activity.Login">
+    tools:context="id.ac.its.sikost.activity.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"

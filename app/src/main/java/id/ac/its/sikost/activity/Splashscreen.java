@@ -22,7 +22,7 @@ public class Splashscreen extends AppCompatActivity {
             @Override
             public void run() {
                 avi.hide();
-                Intent i = new Intent(Splashscreen.this, Login.class);
+                Intent i = new Intent(Splashscreen.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }
