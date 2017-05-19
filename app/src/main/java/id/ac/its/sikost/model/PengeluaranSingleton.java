@@ -18,7 +18,7 @@ public class PengeluaranSingleton {
 
     private PengeluaranSingleton() {
         pengeluarans = new ArrayList<>();
-        pengeluarans.add(new Pengeluaran("Cuci toilet", "Admin", "2 Mei 2017", 100000));
+        pengeluarans.add(new Pengeluaran("Cuci toilet", "Admin", "20-05-2017", 100000));
     }
 
     public List<Pengeluaran> getPengeluarans() {
