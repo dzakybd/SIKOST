@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
                 .icon(FontAwesome.Icon.faw_money)
                 .color(ResourcesCompat.getColor(getResources(), R.color.primary, null))
                 .actionBar());
+        datapengeluaran.setImageDrawable(new IconicsDrawable(this)
+                .icon(FontAwesome.Icon.faw_money)
+                .color(ResourcesCompat.getColor(getResources(), R.color.primary, null))
+                .actionBar());
+        dataadmin.setImageDrawable(new IconicsDrawable(this)
+                .icon(FontAwesome.Icon.faw_user_secret)
+                .color(ResourcesCompat.getColor(getResources(), R.color.primary, null))
+                .actionBar());
     }
 
     @OnClick({R.id.keluar, R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran, R.id.cardadmin, R.id.cardpengeluaran})
@@ -85,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DataPenghuniActivity.class));
                 break;
             case R.id.cardpindah:
-                startActivity(new Intent(MainActivity.this, PindahKamarActivity.class));
+                startActivity(new Intent(MainActivity.this, SewaKamarActivity.class));
                 break;
             case R.id.cardpembayaran:
                 startActivity(new Intent(MainActivity.this, DataPembayaranActivity.class));

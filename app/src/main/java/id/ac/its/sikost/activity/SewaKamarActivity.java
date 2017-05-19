@@ -36,7 +36,7 @@ import id.ac.its.sikost.model.KamarSingleton;
 import id.ac.its.sikost.model.Penghuni;
 import id.ac.its.sikost.model.PenghuniSingleton;
 
-public class PindahKamarActivity extends AppCompatActivity implements EditHapusInterface {
+public class SewaKamarActivity extends AppCompatActivity implements EditHapusInterface {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -66,9 +66,9 @@ public class PindahKamarActivity extends AppCompatActivity implements EditHapusI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pindah_kamar);
+        setContentView(R.layout.activity_sewa_kamar);
         ButterKnife.bind(this);
-        setTitle("Pindah Kamar");
+        setTitle("Sewa Kamar");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
