@@ -50,7 +50,7 @@ public class DataPengeluaranActivity extends AppCompatActivity implements EditHa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_pengeluaran);
         ButterKnife.bind(this);
-        setTitle("Data Pembayaran");
+        setTitle("Data Pengeluaran");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
