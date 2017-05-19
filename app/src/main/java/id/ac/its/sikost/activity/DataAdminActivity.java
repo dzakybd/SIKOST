@@ -18,6 +18,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.Utils;
 import id.ac.its.sikost.adapter.AdminAdapter;
@@ -51,12 +52,7 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
         adapter = new AdminAdapter(this, admins, this);
         rvAdmin.setAdapter(adapter);
 
-        fabAddAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tambah();
-            }
-        });
+
         setTitle("Data Admin");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -160,5 +156,10 @@ public class DataAdminActivity extends AppCompatActivity implements EditHapusInt
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @OnClick(R.id.fab_add_admin)
+    public void onViewClicked() {
+        tambah();
     }
 }
