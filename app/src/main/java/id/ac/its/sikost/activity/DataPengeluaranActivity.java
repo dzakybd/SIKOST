@@ -96,7 +96,7 @@ public class DataPengeluaranActivity extends AppCompatActivity implements EditHa
                 tvTotal.setText("Total : "+String.valueOf(total));
                 SimpleDateFormat sdfdate = new SimpleDateFormat("dd-MM-yyyy");
                 Date tanggal = new Date();
-                Pengeluaran pengeluaran = new Pengeluaran(judul, Prefs.getString("admin", ""), sdfdate.format(tanggal), nominal);
+                Pengeluaran pengeluaran = new Pengeluaran(judul, Prefs.getString("admin", ""), sdfdate.format(tanggal), nominal, "----");
                 PengeluaranSingleton.getInstance().addPengeluaran(pengeluaran);
                 adapter.notifyDataSetChanged();
                 dialog.dismiss();
