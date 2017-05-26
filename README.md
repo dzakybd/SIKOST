@@ -2,6 +2,16 @@
 
 Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 
+### Developer
+1. Dzaky Zakiyal Fawwaz (5114100067)
+2. Ilham Aulia Majid (5114100144)
+3. Agung Rezky Ramadhan (5114100074)
+
+### Client
+1. Adetiya Bagus Nusantara
+2. Nurul Wachidah
+3. Andi Ersaldy Raisha P.
+
 ### Daftar spesifikasi yang dikerjakan :
 
 - 1.1.	Registrasi Data Penyewa **Done**
