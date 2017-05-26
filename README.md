@@ -58,9 +58,6 @@ Download [apk](https://github.com/dzakybd/SIKOST/blob/Versi-2/Dokumentasi-v2/app
 ### Data_Penghuni_Dialog
 ![Data_Penghuni_Dialog](https://github.com/dzakybd/SIKOST/blob/Versi-2/Dokumentasi-v2/Screenshot-v2/Data_Penghuni_Dialog.png?raw=true)
 
-### Data_Kamar_Dialog
-![Data_Penghuni_Dialog](https://github.com/dzakybd/SIKOST/blob/Versi-2/Dokumentasi-v2/Screenshot-v2/Data_Penghuni_Dialog.png?raw=true)
-
 ### Sewa_Kamar
 ![Pindah_Kamar](https://github.com/dzakybd/SIKOST/blob/Versi-2/Dokumentasi-v2/Screenshot-v2/Sewa_Kamar.png?raw=true)
 
