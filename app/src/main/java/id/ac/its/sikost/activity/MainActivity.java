@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView dataadmin;
     @BindView(R.id.cardadmin)
     CardView cardadmin;
+    @BindView(R.id.datajenispengeluaran)
+    ImageView datajenispengeluaran;
+    @BindView(R.id.cardjenispengeluaran)
+    CardView cardjenispengeluaran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +85,13 @@ public class MainActivity extends AppCompatActivity {
                 .icon(FontAwesome.Icon.faw_user_secret)
                 .color(ResourcesCompat.getColor(getResources(), R.color.primary, null))
                 .actionBar());
+        datajenispengeluaran.setImageDrawable(new IconicsDrawable(this)
+                .icon(FontAwesome.Icon.faw_money)
+                .color(ResourcesCompat.getColor(getResources(), R.color.primary, null))
+                .actionBar());
     }
 
-    @OnClick({R.id.keluar, R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran, R.id.cardadmin, R.id.cardpengeluaran})
+    @OnClick({R.id.keluar, R.id.cardkamar, R.id.cardpenghuni, R.id.cardpindah, R.id.cardpembayaran, R.id.cardadmin, R.id.cardpengeluaran, R.id.cardjenispengeluaran})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cardkamar:
@@ -103,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.cardadmin:
                 startActivity(new Intent(MainActivity.this, DataAdminActivity.class));
+                break;
+            case R.id.cardjenispengeluaran:
+                startActivity(new Intent(MainActivity.this, DataJenisPengeluaranActivity.class));
                 break;
             case R.id.keluar:
                 out();

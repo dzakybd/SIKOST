@@ -32,9 +32,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
     @BindView(R.id.fab_add_penghuni)
     FloatingActionButton fabAddPenghuni;
 
-    EditText et_nama;
-    EditText et_ktp;
-    EditText et_ttl;
+    EditText et_nama,et_ktp,et_ttl,et_nohp;
 
     List<Penghuni> penghunis;
     @BindView(R.id.toolbar)
@@ -77,6 +75,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
         et_nama.setText(penghuni.getNama());
         et_ktp.setText(penghuni.getKtp());
         et_ttl.setText(penghuni.getTtl());
+        et_nohp.setText(penghuni.getNohp());
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,9 +83,11 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
                 String nama = et_nama.getText().toString();
                 String ktp = et_ktp.getText().toString();
                 String ttl = et_ttl.getText().toString();
+                String nohp = et_nohp.getText().toString();
                 penghuni.setNama(nama);
                 penghuni.setKtp(ktp);
                 penghuni.setTtl(ttl);
+                penghuni.setNohp(nohp);
                 adapter.notifyDataSetChanged();
                 dialog.dismiss();
             }
@@ -102,7 +103,8 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
                 String nama = et_nama.getText().toString();
                 String ktp = et_ktp.getText().toString();
                 String ttl = et_ttl.getText().toString();
-                Penghuni penghuni = new Penghuni(nama, ktp, ttl);
+                String nohp = et_nohp.getText().toString();
+                Penghuni penghuni = new Penghuni(nama, ktp, ttl, nohp);
                 PenghuniSingleton.getInstance().addPenghuni(penghuni);
                 adapter.notifyDataSetChanged();
                 dialog.dismiss();
@@ -116,6 +118,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
         et_nama = (EditText) alertView.findViewById(R.id.et_nama);
         et_ktp = (EditText) alertView.findViewById(R.id.et_ktp);
         et_ttl = (EditText) alertView.findViewById(R.id.et_ttl);
+        et_nohp = (EditText) alertView.findViewById(R.id.et_nohp);
         result.setTitle(title)
                 .setView(alertView)
                 .setPositiveButton("Simpan", null)
@@ -130,6 +133,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
         editTexts.add(et_nama);
         editTexts.add(et_ktp);
         editTexts.add(et_ttl);
+        editTexts.add(et_nohp);
         return Utils.setEmptyErrorMessage(editTexts, "Wajib diisi");
     }
 
