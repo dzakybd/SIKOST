@@ -38,7 +38,7 @@ public class PenghuniPindahAdapter extends RecyclerView.Adapter<PenghuniPindahAd
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar_penghuni, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_penghuni, parent, false);
         return new ViewHolder(view);
     }
 
@@ -48,9 +48,11 @@ public class PenghuniPindahAdapter extends RecyclerView.Adapter<PenghuniPindahAd
         String nama = String.format(penghuni.getNama());
         String ktp = String.format(context.getString(R.string.ktp), penghuni.getKtp());
         String ttl = String.format(context.getString(R.string.ttl), penghuni.getTtl());
+        String nohp = penghuni.getNohp();
         holder.tvNamaPenghuni.setText(nama);
         holder.tvKtpPenghuni.setText(ktp);
         holder.tvTtlPenghuni.setText(ttl);
+        holder.tvNoHp.setText(nohp);
         holder.btnEdit.setVisibility(View.GONE);
         holder.btnHapus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +73,12 @@ public class PenghuniPindahAdapter extends RecyclerView.Adapter<PenghuniPindahAd
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
         holder.tvTtlPenghuni.setCompoundDrawables(img, null, null, null);
+        img = new IconicsDrawable(context)
+                .icon(FontAwesome.Icon.faw_phone)
+                .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
+                .actionBar();
+        img.setBounds(0, 0, 50, 50);
+        holder.tvNoHp.setCompoundDrawables(img, null, null, null);
     }
 
     @Override
@@ -81,10 +89,12 @@ public class PenghuniPindahAdapter extends RecyclerView.Adapter<PenghuniPindahAd
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_nama_kamar)
         TextView tvNamaPenghuni;
-        @BindView(R.id.tv_kapasitas_kamar)
+        @BindView(R.id.tv_ktp)
         TextView tvKtpPenghuni;
-        @BindView(R.id.tv_biaya_kamar)
+        @BindView(R.id.tv_ttl)
         TextView tvTtlPenghuni;
+        @BindView(R.id.tv_no_hp)
+        TextView tvNoHp;
         @BindView(R.id.btn_edit)
         TextView btnEdit;
         @BindView(R.id.btn_hapus)

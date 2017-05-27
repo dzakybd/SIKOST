@@ -46,7 +46,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar_penghuni, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kamar, parent, false);
         return new ViewHolder(view);
     }
 
