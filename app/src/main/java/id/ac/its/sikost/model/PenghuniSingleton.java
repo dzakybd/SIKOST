@@ -19,9 +19,9 @@ public class PenghuniSingleton {
 
     private PenghuniSingleton() {
         penghunis = new ArrayList<>();
-        penghunis.add(new Penghuni("Budi", "24112323212323", "Sby, 21 Mar 2010"));
-        penghunis.add(new Penghuni("Andi", "24112323212323", "Sby, 21 Mar 2010"));
-        penghunis.add(new Penghuni("Candra", "24112323212323", "Sby, 21 Mar 2010"));
+        penghunis.add(new Penghuni("Budi", "44512373242323", "Demak, 18 Maret 1997", "089650724560"));
+        penghunis.add(new Penghuni("Andi", "74012623292323", "Solo, 20 April 1996", "085737486339"));
+        penghunis.add(new Penghuni("Candra", "24112323212323", "Bali, 3 Juni 1995", "082174516112"));
     }
 
     public List<Penghuni> getPenghunis() {
