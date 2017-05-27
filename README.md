@@ -16,15 +16,14 @@ Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 
 - 1.1.	Registrasi Data Penyewa **Done**
 - 1.2.	Lihat Data Penyewa **Done**
-
 - 1.3.	Merubah Data Penyewa **Done**
 - 1.4.	Menghapus Data Penyewa **Done**
 - 2.1.	Registrasi Administrator Baru **Done**
 - 2.2.	Lihat Data Administrator **Done**
 - 2.3.	Merubah Data Administrator **Done**
 - 2.4.	Menghapus Data Administrator **Done**
-- 3.1.	Menambah Nama Jenis Pengeluaran
-- 3.2.	Merubah Nama Jenis Pengeluaran
+- 3.1.	Menambah Nama Jenis Pengeluaran **Done**
+- 3.2.	Merubah Nama Jenis Pengeluaran **Done**
 - 4.1.	Registrasi Pembayaran Kamar **Done**
 - 4.2.	Lihat Histori Pembayaran Kamar **Done**
 - 4.3.	Merubah Histori Pembayaran Kamar **Done**
@@ -40,9 +39,14 @@ Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 - 7.3.	Menghapus Nomor Kamar **Done**
 - 8.1.	Melihat Ketersediaan Kamar **Done**
 
-
 ### APK
 Download [apk](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/app-release-v3.apk?raw=true)
+
+### Spesifikasi_Use_Case
+Download [usecase](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/spesifikasi_use_case_sikost_v3.docx?raw=true)
+
+### PDM
+![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/pdm_sikost_v3.png?raw=true)
 
 ### Login
 ![Login](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Login.png?raw=true)
@@ -76,6 +80,12 @@ Download [apk](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/app
 
 ### Data_Pembayaran_Dialog
 ![Data_Pembayaran_Dialog](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Data_Pembayaran_Dialog.png?raw=true)
+
+### Jenis_Pengeluaran
+![Jenis_Pengeluaran](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Jenis_Pengeluaran.png?raw=true)
+
+### Jenis_Pengeluaran_Dialog
+![Jenis_Pengeluaran_Dialog](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Jenis_Pengeluaran_Dialog.png?raw=true)
 
 ### Data_Pengeluaran
 ![Data_Pengeluaran](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Data_Pengeluaran.png?raw=true)
