@@ -46,7 +46,7 @@ Download [apk](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/app
 Download [usecase](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/spesifikasi_use_case_sikost_v3.docx?raw=true)
 
 ### PDM
-![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/pdm_sikost_v3.png?raw=true)
+![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/pdm_sikost_v3.jpg?raw=true)
 
 ### Login
 ![Login](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Login.png?raw=true)
