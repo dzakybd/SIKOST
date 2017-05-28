@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.ac.its.sikost.activity.DataAdminActivity">
+    tools:context="id.ac.its.sikost.activity.DataJenisPengeluaranActivity">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,17 +17,24 @@
         app:layout_scrollFlags="scroll|enterAlways"
         >
     </android.support.v7.widget.Toolbar>
-    <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/toolbar"
-        android:id="@+id/rv_admin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp">
 
-    </android.support.v7.widget.RecyclerView>
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_jenis"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_add_admin"
+        android:id="@+id/fab_add_jenis_pengeluaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

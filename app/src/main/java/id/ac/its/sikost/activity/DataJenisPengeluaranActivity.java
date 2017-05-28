@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,129 +23,88 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.ac.its.sikost.R;
 import id.ac.its.sikost.Utils;
-import id.ac.its.sikost.adapter.AdminAdapter;
 import id.ac.its.sikost.interfaces.EditHapusInterface;
-import id.ac.its.sikost.model.Admin;
-import id.ac.its.sikost.model.AdminSingleton;
+import id.ac.its.sikost.model.JenisPengeluaranSingleton;
 
-public class DataJenisPengeluaranActivity extends AppCompatActivity implements EditHapusInterface {
+public class DataJenisPengeluaranActivity extends AppCompatActivity {
 
-    AdminAdapter adapter;
-    List<Admin> admins;
+    List<String> jenisPengeluarans;
 
-    EditText et_nama, et_username, et_password;
+    @BindView(R.id.ll_jenis)
+    LinearLayout llJenis;
+    @BindView(R.id.fab_add_jenis_pengeluaran)
+    FloatingActionButton fabAddJenisPengeluaran;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.rv_admin)
-    RecyclerView rvAdmin;
-    @BindView(R.id.fab_add_admin)
-    FloatingActionButton fabAddAdmin;
+    EditText etJenis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_admin);
+        setContentView(R.layout.activity_data_jenis_pengeluaran);
         ButterKnife.bind(this);
-        admins = AdminSingleton.getInstance().getAdmins();
+        jenisPengeluarans = JenisPengeluaranSingleton.getInstance().getJenisPengeluarans();
+        for (String jenisPengeluaran : jenisPengeluarans) {
+            addJenisPengeluaran(jenisPengeluaran);
+        }
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        rvAdmin.setLayoutManager(llm);
-        rvAdmin.setHasFixedSize(true);
-        adapter = new AdminAdapter(this, admins, this);
-        rvAdmin.setAdapter(adapter);
-
-
-        setTitle("Data Admin");
+        setTitle("Data Jenis Pengeluaran");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
     }
 
-    @Override
-    public void edit(final int index) {
-        final Admin admin = admins.get(index);
-        final AlertDialog dialog = buildDialog("Edit Admin");
-        et_nama.setText(admin.getNama());
-        et_username.setText(admin.getUsername());
-        et_password.setText(admin.getPassword());
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+    private void addJenisPengeluaran(final String jenisPengeluaran) {
+        final RelativeLayout layout = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.item_jenis_pengeluaran, null);
+        TextView tvJenisPengeluaran = (TextView) layout.findViewById(R.id.tv_jenis_pengeluaran);
+        Button btnHapus = (Button) layout.findViewById(R.id.btn_hapus_jenis_pengeluaran);
+        tvJenisPengeluaran.setText(jenisPengeluaran);
+        btnHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isEmpty()) return;
-                String nama = et_nama.getText().toString();
-                String username = et_username.getText().toString();
-                String password = et_password.getText().toString();
-                admin.setNama(nama);
-                admin.setUsername(username);
-                admin.setPassword(password);
-                adapter.notifyDataSetChanged();
-                dialog.dismiss();
+                AlertDialog.Builder builder = new AlertDialog.Builder(DataJenisPengeluaranActivity.this);
+                builder.setMessage("Anda ingin menghapus?")
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                jenisPengeluarans.remove(jenisPengeluaran);
+                                llJenis.removeView(layout);
+                            }
+                        })
+                .setNegativeButton("Tidak", null);
+                builder.show();
             }
         });
-    }
-
-    private void tambah() {
-        final AlertDialog dialog = buildDialog("Tambah Admin");
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isEmpty()) return;
-                String nama = et_nama.getText().toString();
-                String username = et_username.getText().toString();
-                String password = et_password.getText().toString();
-                Admin admin = new Admin(nama, username, password);
-                AdminSingleton.getInstance().addAdmin(admin);
-                adapter.notifyDataSetChanged();
-                dialog.dismiss();
-            }
-        });
+        llJenis.addView(layout);
     }
 
     private AlertDialog buildDialog(String title) {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
-        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_admin, null);
-        et_nama = (EditText) alertview.findViewById(R.id.et_nama);
-        et_username = (EditText) alertview.findViewById(R.id.et_username);
-        et_password = (EditText) alertview.findViewById(R.id.et_password);
+        View alertview = getLayoutInflater().inflate(R.layout.dialog_data_jenis_pengeluaran, null);
+        etJenis = (EditText) alertview.findViewById(R.id.et_jenis);
         result.setTitle(title)
                 .setView(alertview)
                 .setPositiveButton("Simpan", null)
                 .setNegativeButton("Batal", null);
         final AlertDialog dialog = result.create();
         dialog.show();
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isEmpty()) return;
+                String jenisPengeluaran = etJenis.getText().toString();
+                jenisPengeluarans.add(jenisPengeluaran);
+                addJenisPengeluaran(jenisPengeluaran);
+                dialog.dismiss();
+            }
+        });
         return dialog;
     }
 
     private boolean isEmpty() {
         List<EditText> editTexts = new ArrayList<>();
-        editTexts.add(et_nama);
-        editTexts.add(et_username);
-        editTexts.add(et_password);
+        editTexts.add(etJenis);
         return Utils.setEmptyErrorMessage(editTexts, "Wajib diisi");
-    }
-
-
-    @Override
-    public void hapus(final int index) {
-        Log.d("HAPUS", "" + adapter.getItemCount());
-        AlertDialog.Builder pilihan = new AlertDialog.Builder(this);
-        if (adapter.getItemCount() == 1) {
-            pilihan.setMessage("Tidak dapat menghapus. Jumlah minimal admin adalah 1.");
-            pilihan.setPositiveButton("OK", null);
-        } else {
-            pilihan.setMessage("Anda ingin menghapus?");
-            pilihan.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    admins.remove(index);
-                    adapter.notifyDataSetChanged();
-                }
-            });
-            pilihan.setNegativeButton("Tidak", null);
-        }
-        AlertDialog alert = pilihan.create();
-        alert.show();
-
     }
 
     @Override
@@ -158,8 +119,8 @@ public class DataJenisPengeluaranActivity extends AppCompatActivity implements E
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.fab_add_admin)
-    public void onViewClicked() {
-        tambah();
+    @OnClick(R.id.fab_add_jenis_pengeluaran)
+    public void onViewClicked(){
+        buildDialog("Tambah Jenis Pengeluaran");
     }
 }

@@ -7,11 +7,11 @@ import java.util.List;
  * Created by Ilham Aulia Majid on 20-May-17.
  */
 
-class JenisPengeluaranSingleton {
+public class JenisPengeluaranSingleton {
 
     private static final JenisPengeluaranSingleton ourInstance = new JenisPengeluaranSingleton();
 
-    static JenisPengeluaranSingleton getInstance() {
+    public static JenisPengeluaranSingleton getInstance() {
         return ourInstance;
     }
 
