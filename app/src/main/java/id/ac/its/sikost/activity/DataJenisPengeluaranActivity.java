@@ -2,6 +2,7 @@ package id.ac.its.sikost.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -56,10 +57,35 @@ public class DataJenisPengeluaranActivity extends AppCompatActivity {
 
     private void addJenisPengeluaran(final String jenisPengeluaran) {
         final RelativeLayout layout = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.item_jenis_pengeluaran, null);
-        TextView tvJenisPengeluaran = (TextView) layout.findViewById(R.id.tv_jenis_pengeluaran);
+        final TextView tvJenisPengeluaran = (TextView) layout.findViewById(R.id.tv_jenis_pengeluaran);
         Button btnHapus = (Button) layout.findViewById(R.id.btn_hapus_jenis_pengeluaran);
+        Button btnEdit = (Button) layout.findViewById(R.id.btn_edit_jenis_pengeluaran);
         tvJenisPengeluaran.setText(jenisPengeluaran);
-        btnHapus.setOnClickListener(new View.OnClickListener() {
+        btnHapus.setOnClickListener(getHapusListener(jenisPengeluaran, layout));
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog dialog = buildDialog("Edit Jenis Pengeluaran", tvJenisPengeluaran.getText().toString());
+                dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (isEmpty()) return;
+                        String baru = etJenis.getText().toString();
+                        tvJenisPengeluaran.setText(baru);
+                        int index = jenisPengeluarans.indexOf(jenisPengeluaran);
+                        jenisPengeluarans.remove(jenisPengeluaran);
+                        jenisPengeluarans.add(index, baru);
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+        llJenis.addView(layout);
+    }
+
+    @NonNull
+    private View.OnClickListener getHapusListener(final String jenisPengeluaran, final RelativeLayout layout) {
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(DataJenisPengeluaranActivity.this);
@@ -71,33 +97,23 @@ public class DataJenisPengeluaranActivity extends AppCompatActivity {
                                 llJenis.removeView(layout);
                             }
                         })
-                .setNegativeButton("Tidak", null);
+                        .setNegativeButton("Tidak", null);
                 builder.show();
             }
-        });
-        llJenis.addView(layout);
+        };
     }
 
-    private AlertDialog buildDialog(String title) {
+    private AlertDialog buildDialog(String title, String jenis) {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
         View alertview = getLayoutInflater().inflate(R.layout.dialog_data_jenis_pengeluaran, null);
         etJenis = (EditText) alertview.findViewById(R.id.et_jenis);
+        etJenis.setText(jenis);
         result.setTitle(title)
                 .setView(alertview)
                 .setPositiveButton("Simpan", null)
                 .setNegativeButton("Batal", null);
         final AlertDialog dialog = result.create();
         dialog.show();
-        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isEmpty()) return;
-                String jenisPengeluaran = etJenis.getText().toString();
-                jenisPengeluarans.add(jenisPengeluaran);
-                addJenisPengeluaran(jenisPengeluaran);
-                dialog.dismiss();
-            }
-        });
         return dialog;
     }
 
@@ -120,7 +136,18 @@ public class DataJenisPengeluaranActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.fab_add_jenis_pengeluaran)
-    public void onViewClicked(){
-        buildDialog("Tambah Jenis Pengeluaran");
+    public void onViewClicked() {
+        final AlertDialog dialog = buildDialog("Tambah Jenis Pengeluaran", null);
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isEmpty()) return;
+                String jenisPengeluaran = etJenis.getText().toString();
+                jenisPengeluarans.add(jenisPengeluaran);
+                addJenisPengeluaran(jenisPengeluaran);
+                dialog.dismiss();
+            }
+        });
     }
+
 }

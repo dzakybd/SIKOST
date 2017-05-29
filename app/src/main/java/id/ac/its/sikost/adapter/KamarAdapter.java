@@ -91,10 +91,10 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
         notifyDataSetChanged();
     }
 
-    public void filterTersedia(){
+    public void filterTersedia() {
         List<Kamar> temp = new ArrayList<>();
-        for (Kamar kamar:kamars){
-            if (kamar.getTerisi() < kamar.getKapasitas()){
+        for (Kamar kamar : kamars) {
+            if (kamar.getTerisi() < kamar.getKapasitas()) {
                 temp.add(kamar);
             }
         }
@@ -102,10 +102,10 @@ public class KamarAdapter extends RecyclerView.Adapter<KamarAdapter.ViewHolder> 
         notifyDataSetChanged();
     }
 
-    public void filterPenuh(){
+    public void filterPenuh() {
         List<Kamar> temp = new ArrayList<>();
-        for (Kamar kamar:kamars){
-            if (kamar.getTerisi() == kamar.getKapasitas()){
+        for (Kamar kamar : kamars) {
+            if (kamar.getTerisi() == kamar.getKapasitas()) {
                 temp.add(kamar);
             }
         }

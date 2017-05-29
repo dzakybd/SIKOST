@@ -17,7 +17,7 @@ public class Penghuni implements Serializable {
         this.nama = nama;
         this.ktp = ktp;
         this.ttl = ttl;
-        this.nohp=nohp;
+        this.nohp = nohp;
     }
 
     public String getNama() {

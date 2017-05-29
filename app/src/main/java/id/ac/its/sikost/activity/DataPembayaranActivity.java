@@ -1,6 +1,7 @@
 package id.ac.its.sikost.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -53,7 +55,7 @@ public class DataPembayaranActivity extends AppCompatActivity implements EditHap
     RecyclerView rvBayar;
     @BindView(R.id.fab_add_bayar)
     FloatingActionButton fabAddBayar;
-    List<Pembayaran> pembayarans,pembayaran_kamar;
+    List<Pembayaran> pembayarans, pembayaran_kamar;
     List<Kamar> kamars;
     List<String> opsikamar;
     ArrayAdapter<String> adapter_kamar_spinner;
@@ -100,29 +102,19 @@ public class DataPembayaranActivity extends AppCompatActivity implements EditHap
 
             }
         });
-        
+
     }
-    
+
     private void showpembayaran() {
         pembayaran_kamar = new ArrayList<>();
-        for (Pembayaran p : pembayarans){
-            if(p.kamar.contentEquals(spinnerKamar.getSelectedItem().toString()))pembayaran_kamar.add(p);
+        for (Pembayaran p : pembayarans) {
+            if (p.kamar.contentEquals(spinnerKamar.getSelectedItem().toString()))
+                pembayaran_kamar.add(p);
         }
         adapter = new PembayaranAdapter(this, pembayaran_kamar, this);
         rvBayar.setAdapter(adapter);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
     @OnClick(R.id.fab_add_bayar)
     public void onViewClicked() {
         tambah();
@@ -157,9 +149,9 @@ public class DataPembayaranActivity extends AppCompatActivity implements EditHap
             public void onClick(View v) {
                 if (isEmpty()) return;
                 int nominal = Integer.valueOf(et_nominal.getText().toString());
-                for(Pembayaran p :pembayarans){
-                    if(p.kamar.contentEquals(pembayaran.kamar)&&p.tanggal.contentEquals(pembayaran.petugas)&&p.tanggal.contentEquals(pembayaran.tanggal))
-                        p.nominal=nominal;
+                for (Pembayaran p : pembayarans) {
+                    if (p.kamar.contentEquals(pembayaran.kamar) && p.tanggal.contentEquals(pembayaran.petugas) && p.tanggal.contentEquals(pembayaran.tanggal))
+                        p.nominal = nominal;
                 }
                 pembayaran.nominal = nominal;
                 adapter.notifyDataSetChanged();
@@ -195,8 +187,8 @@ public class DataPembayaranActivity extends AppCompatActivity implements EditHap
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 final Pembayaran pembayaran = pembayaran_kamar.get(index);
-                for(Pembayaran p :pembayarans){
-                    if(p.kamar.contentEquals(pembayaran.kamar)&&p.tanggal.contentEquals(pembayaran.petugas)&&p.tanggal.contentEquals(pembayaran.tanggal))
+                for (Pembayaran p : pembayarans) {
+                    if (p.kamar.contentEquals(pembayaran.kamar) && p.tanggal.contentEquals(pembayaran.petugas) && p.tanggal.contentEquals(pembayaran.tanggal))
                         pembayarans.remove(p);
                 }
                 pembayaran_kamar.remove(index);
@@ -206,5 +198,17 @@ public class DataPembayaranActivity extends AppCompatActivity implements EditHap
         pilihan.setNegativeButton("Tidak", null);
         AlertDialog alert = pilihan.create();
         alert.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

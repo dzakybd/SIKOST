@@ -18,14 +18,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textColor="@color/primary_text"
                 android:id="@+id/tv_kamar_pembayaran"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="6.02"
+                android:gravity="center"
                 android:text="ABCD"
-                android:textSize="40sp"
-                android:gravity="center"/>
+                android:textColor="@color/primary_text"
+                android:textSize="40sp" />
 
             <LinearLayout
                 android:layout_width="0dp"

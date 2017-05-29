@@ -52,6 +52,7 @@ public class PengeluaranAdapter extends RecyclerView.Adapter<PengeluaranAdapter.
         holder.tvNominalPengeluaran.setText(String.valueOf(pengeluaran.nominal));
         holder.tvPetugasPengeluaran.setText(pengeluaran.petugas);
         holder.tvTanggalPengeluaran.setText(pengeluaran.tanggal);
+        holder.tvJenisPengeluaran.setText(pengeluaran.jenis);
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 listener.edit(index);
@@ -82,6 +83,12 @@ public class PengeluaranAdapter extends RecyclerView.Adapter<PengeluaranAdapter.
                 .actionBar();
         img.setBounds(0, 0, 50, 50);
         holder.tvPetugasPengeluaran.setCompoundDrawables(img, null, null, null);
+        img = new IconicsDrawable(context)
+                .icon(FontAwesome.Icon.faw_list_ul)
+                .color(ResourcesCompat.getColor(context.getResources(), R.color.primary, null))
+                .actionBar();
+        img.setBounds(0, 0, 50, 50);
+        holder.tvJenisPengeluaran.setCompoundDrawables(img, null, null, null);
     }
 
     @Override
@@ -99,6 +106,8 @@ public class PengeluaranAdapter extends RecyclerView.Adapter<PengeluaranAdapter.
         TextView tvNominalPengeluaran;
         @BindView(R.id.tv_petugas_pengeluaran)
         TextView tvPetugasPengeluaran;
+        @BindView(R.id.tv_jenis_pengeluaran)
+        TextView tvJenisPengeluaran;
         @BindView(R.id.btn_edit)
         TextView btnEdit;
         @BindView(R.id.btn_hapus)

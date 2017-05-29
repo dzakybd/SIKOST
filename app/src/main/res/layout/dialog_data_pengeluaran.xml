@@ -26,6 +26,13 @@
             android:gravity="center_vertical"
             android:text="Nominal" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Jenis" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -48,6 +55,12 @@
             android:layout_weight="1"
             android:hint="Nominal"
             android:inputType="numberSigned" />
+
+        <Spinner
+            android:id="@+id/spinner_jenis"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
     </LinearLayout>
 

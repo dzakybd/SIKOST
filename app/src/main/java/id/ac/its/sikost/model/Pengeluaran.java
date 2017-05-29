@@ -5,7 +5,7 @@ package id.ac.its.sikost.model;
  */
 
 public class Pengeluaran {
-    public String judul,petugas,tanggal, jenis;
+    public String judul, petugas, tanggal, jenis;
     public int nominal;
 
     public Pengeluaran(String judul, String petugas, String tanggal, int nominal, String jenis) {

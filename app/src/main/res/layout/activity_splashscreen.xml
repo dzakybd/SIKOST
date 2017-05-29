@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_splashscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="id.ac.its.sikost.activity.Splashscreen">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary"
-            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/primary"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avi"
-        app:indicatorColor="@color/primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:indicatorName="BallPulseIndicator"
-        />
+        app:indicatorColor="@color/primary"
+        app:indicatorName="BallPulseIndicator" />
 </LinearLayout>

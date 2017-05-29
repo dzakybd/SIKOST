@@ -16,22 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Nama"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Nama" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Username"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Username" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Password"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Password" />
 
     </LinearLayout>
 
@@ -54,11 +54,11 @@
             android:hint="Username" />
 
         <EditText
-            android:inputType="textPassword"
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="Password"
+            android:inputType="textPassword" />
 
     </LinearLayout>
 

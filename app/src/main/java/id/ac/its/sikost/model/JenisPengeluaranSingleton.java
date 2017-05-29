@@ -29,7 +29,7 @@ public class JenisPengeluaranSingleton {
         return jenisPengeluarans;
     }
 
-    public void addJenisPengeluaran(String jenisPengeluaran){
+    public void addJenisPengeluaran(String jenisPengeluaran) {
         jenisPengeluarans.add(jenisPengeluaran);
     }
 }

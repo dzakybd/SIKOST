@@ -16,29 +16,29 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Nama"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Nama" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="KTP"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="KTP" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="TTL"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="TTL" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="No HP"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="No HP" />
 
     </LinearLayout>
 
@@ -56,12 +56,12 @@
             android:hint="Nama" />
 
         <EditText
-            android:inputType="number"
             android:id="@+id/et_ktp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:hint="KTP" />
+            android:hint="KTP"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/et_ttl"
@@ -72,11 +72,11 @@
 
         <EditText
             android:id="@+id/et_nohp"
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:hint="No HP" />
+            android:hint="No HP"
+            android:inputType="number" />
 
     </LinearLayout>
 

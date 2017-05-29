@@ -16,22 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Nama"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Nama" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Kapasitas"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Kapasitas" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Biaya"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:text="Biaya" />
 
     </LinearLayout>
 
@@ -48,18 +48,18 @@
             android:hint="Nama / Nomor Kamar" />
 
         <EditText
-            android:inputType="numberSigned"
             android:id="@+id/et_kapasitas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kapasitas" />
+            android:hint="Kapasitas"
+            android:inputType="numberSigned" />
 
         <EditText
-            android:inputType="numberSigned"
             android:id="@+id/et_biaya"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Biaya" />
+            android:hint="Biaya"
+            android:inputType="numberSigned" />
 
     </LinearLayout>
 

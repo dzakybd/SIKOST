@@ -32,7 +32,6 @@ public class PembayaranAdapter extends RecyclerView.Adapter<PembayaranAdapter.Vi
     EditHapusInterface listener;
 
 
-
     public PembayaranAdapter(Context context, List<Pembayaran> pembayarans, EditHapusInterface listener) {
         this.pembayarans = pembayarans;
         this.context = context;

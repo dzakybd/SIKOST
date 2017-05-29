@@ -3,21 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="id.ac.its.sikost.activity.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/primary"
         android:layout_gravity="center_horizontal"
-        />
+        android:layout_marginBottom="10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/primary"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/login_username"
@@ -31,24 +30,24 @@
         android:textAlignment="center" />
 
     <EditText
-        android:layout_marginTop="10dp"
-        android:layout_width="250dp"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
         android:id="@+id/login_password"
-        android:hint="Password" />
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textAlignment="center" />
 
     <Button
-        android:text="Masuk"
-        android:layout_marginTop="10dp"
+        android:id="@+id/login_button"
         android:layout_width="250dp"
-        android:textColor="@color/icons"
-        android:background="@color/primary"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:id="@+id/login_button" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/primary"
+        android:text="Masuk"
+        android:textAlignment="center"
+        android:textColor="@color/icons" />
 </LinearLayout>

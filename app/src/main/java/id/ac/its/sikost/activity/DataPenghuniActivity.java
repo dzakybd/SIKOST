@@ -32,7 +32,7 @@ public class DataPenghuniActivity extends AppCompatActivity implements EditHapus
     @BindView(R.id.fab_add_penghuni)
     FloatingActionButton fabAddPenghuni;
 
-    EditText et_nama,et_ktp,et_ttl,et_nohp;
+    EditText et_nama, et_ktp, et_ttl, et_nohp;
 
     List<Penghuni> penghunis;
     @BindView(R.id.toolbar)

@@ -71,7 +71,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmpty()) return;
+                if (isEmpty()) return;
                 String nama = et_nama.getText().toString();
                 int kapasitas = Integer.valueOf(et_kapasitas.getText().toString());
                 int biaya = Integer.valueOf(et_biaya.getText().toString());
@@ -93,7 +93,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isEmpty()) return;
+                if (isEmpty()) return;
                 String nama = et_nama.getText().toString();
                 int kapasitas = Integer.valueOf(et_kapasitas.getText().toString());
                 int biaya = Integer.valueOf(et_biaya.getText().toString());
@@ -105,6 +105,7 @@ public class DataKamarActivity extends AppCompatActivity implements EditHapusInt
             }
         });
     }
+
     private AlertDialog buildDialog(String title) {
         AlertDialog.Builder result = new AlertDialog.Builder(this);
         View alertview = getLayoutInflater().inflate(R.layout.dialog_data_kamar, null);
