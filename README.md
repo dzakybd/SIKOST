@@ -42,11 +42,17 @@ Sistem informasi untuk mengelola keuangan dan administrasi tempat kos
 ### APK
 Download [apk](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/app-release-v3.apk?raw=true)
 
+### SKPL
+Download [SKPL](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/skpl21.docx?raw=true)
+
 ### Spesifikasi_Use_Case
-Download [usecase](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/spesifikasi_use_case_sikost_v3.docx?raw=true)
+Download [spesifikasi_usecase](https://raw.githubusercontent.com/dzakybd/SIKOST/Versi-3/Dokumentasi-v3/spesifikasi%20use%20case%20sikost%20%20v3.1.docx)
+
+### CDM
+![CDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/cdm_sikost_v3.1.jpg?raw=true)
 
 ### PDM
-![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/pdm_sikost_v3.jpg?raw=true)
+![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/pdm_sikost_v3.1.jpg?raw=true)
 
 ### Login
 ![Login](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Login.png?raw=true)
