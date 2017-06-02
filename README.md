@@ -52,7 +52,7 @@ Download [spesifikasi_usecase](https://raw.githubusercontent.com/dzakybd/SIKOST/
 ![CDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/cdm_sikost_v3.1.jpg?raw=true)
 
 ### PDM
-![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/pdm_sikost_v3.1.jpg?raw=true)
+![PDM](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/PDM/PDM_sikost_v3.1.jpg?raw=true)
 
 ### Login
 ![Login](https://github.com/dzakybd/SIKOST/blob/Versi-3/Dokumentasi-v3/Screenshot-v3/Login.png?raw=true)
